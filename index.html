@@ -127,7 +127,7 @@ section{padding:76px 0}
 .calc-card .btn{width:100%;justify-content:center;margin-top:6px}
 
 /* resultado — elemento assinatura: círculo numerológico */
-#resultado{display:none;margin-top:44px;text-align:center}
+#resultado{display:none;margin-top:44px;text-align:center;scroll-margin-top:84px}
 #resultado.show{display:block;animation:rise .6s ease both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){
@@ -778,7 +778,7 @@ function calcular(){
   };
   renderResult(lastResult);
   document.getElementById('resultado').classList.add('show');
-  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'center'});
+  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 function renderResult(r){
