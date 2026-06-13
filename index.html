@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numerologia e Luz — Autoconhecimento através dos números</title>
+<meta name="description" content="Descubra seu Número de Destino e de Expressão gratuitamente. Numerologia Pitagórica: cartas numerológicas personalizadas em português e espanhol.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF6EE;
+  --ivory-2:#F5EDE0;
+  --purple:#3A2A5D;
+  --purple-deep:#2A1E45;
+  --gold:#B6893A;
+  --gold-light:#D7B878;
+  --lavender:#C7B8E8;
+  --lavender-soft:#EAE3F6;
+  --text:#4A3D66;
+  --line:rgba(182,137,58,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Karla',sans-serif;
+  background:var(--ivory);
+  color:var(--text);
+  line-height:1.65;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--purple);font-weight:500}
+a{color:var(--purple)}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───── header ───── */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,246,238,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;letter-spacing:.14em;color:var(--purple);text-transform:uppercase;white-space:nowrap}
+.brand-name em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--text)}
+.nav-links a:hover{color:var(--gold)}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang-toggle button{
+  background:none;border:none;padding:6px 14px;
+  font-size:.78rem;letter-spacing:.1em;color:var(--text);
+}
+.lang-toggle button.active{background:var(--purple);color:var(--ivory)}
+@media(max-width:760px){.nav-links a{display:none}}
+
+/* ───── hero ───── */
+.hero{text-align:center;padding:72px 24px 84px;position:relative;overflow:hidden}
+.hero .ornament{margin-bottom:26px}
+.hero h1{
+  font-size:clamp(2.6rem,7vw,4.6rem);
+  letter-spacing:.06em;text-transform:uppercase;line-height:1.05;
+}
+.hero h1 .luz{color:var(--gold);font-style:italic;text-transform:none;letter-spacing:.02em}
+.hero .divider{display:flex;align-items:center;gap:14px;justify-content:center;margin:22px 0;color:var(--gold)}
+.hero .divider::before,.hero .divider::after{content:"";height:1px;width:72px;background:var(--gold)}
+.hero .sub{max-width:560px;margin:0 auto;font-size:1.08rem;font-weight:300}
+.hero .sub strong{color:var(--purple);font-weight:600}
+.hero .cta-row{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.bg-num{
+  position:absolute;font-family:'Cormorant Garamond',serif;
+  color:var(--purple);opacity:.05;font-size:11rem;pointer-events:none;user-select:none;line-height:1;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 30px;border-radius:99px;border:none;
+  font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--purple);color:var(--ivory);box-shadow:0 8px 24px rgba(58,42,93,.25)}
+.btn-gold:hover{box-shadow:0 12px 30px rgba(58,42,93,.35)}
+.btn-line{background:none;border:1px solid var(--gold);color:var(--purple)}
+
+/* ───── sections ───── */
+section{padding:76px 0}
+.eyebrow{
+  display:inline-block;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--purple);background:var(--lavender-soft);
+  padding:7px 18px;border-radius:99px;margin-bottom:18px;
+}
+.sec-title{font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:.04em;margin-bottom:14px}
+.sec-intro{max-width:620px;font-weight:300;font-size:1.05rem}
+.center{text-align:center}
+.center .sec-intro{margin:0 auto}
+
+/* o que é */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:52px}
+@media(max-width:760px){.pillars{grid-template-columns:1fr}}
+.pillar{border-top:1px solid var(--line);padding-top:24px}
+.pillar .glyph{color:var(--gold);margin-bottom:14px}
+.pillar h3{font-size:1.4rem;margin-bottom:8px}
+.pillar p{font-size:.95rem;font-weight:300}
+
+/* ───── calculadora ───── */
+#calculadora{background:linear-gradient(180deg,var(--ivory) 0%,var(--lavender-soft) 50%,var(--ivory) 100%)}
+.calc-card{
+  max-width:680px;margin:48px auto 0;
+  background:#FFFDF9;border:1px solid var(--line);border-radius:22px;
+  padding:44px 40px;box-shadow:0 18px 50px rgba(58,42,93,.10);
+}
+@media(max-width:560px){.calc-card{padding:32px 22px}}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.field input{
+  width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;
+  background:var(--ivory);font-family:'Karla',sans-serif;font-size:1rem;color:var(--text);
+}
+.field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.field .hint{font-size:.8rem;opacity:.65;margin-top:6px;font-weight:300}
+.calc-card .btn{width:100%;justify-content:center;margin-top:6px}
+
+/* resultado — elemento assinatura: círculo numerológico */
+#resultado{display:none;margin-top:44px;text-align:center}
+#resultado.show{display:block;animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  #resultado.show{animation:none}
+  .btn,.btn:hover{transition:none;transform:none}
+  html{scroll-behavior:auto}
+}
+.num-circles{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.num-circle{width:200px}
+.num-circle .ring{
+  width:150px;height:150px;margin:0 auto 14px;border-radius:50%;
+  border:1px solid var(--gold);position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.num-circle .ring::before{
+  content:"";position:absolute;inset:9px;border-radius:50%;
+  border:1px dotted var(--gold-light);
+}
+.num-circle .ring .n{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--purple);line-height:1}
+.num-circle .ring .star{position:absolute;top:-9px;left:50%;transform:translateX(-50%);color:var(--gold);background:#FFFDF9;padding:0 5px;font-size:.85rem}
+.num-circle h4{font-family:'Karla',sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.num-circle .clave{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--purple);font-size:1.15rem;margin-top:4px}
+.dest-card{
+  max-width:600px;margin:30px auto 0;text-align:left;
+  background:var(--lavender-soft);border:1px solid var(--line);border-radius:18px;
+  padding:28px 30px;
+}
+@media(max-width:560px){.dest-card{padding:22px 20px}}
+.dest-card .mision{font-weight:400;font-size:1.05rem;color:var(--purple);text-align:center;margin-bottom:22px}
+.dest-card .mis-label{display:block;font-family:'Karla',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:480px){.dd-grid{grid-template-columns:1fr;gap:18px}}
+.dd-col h6{font-family:'Karla',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.dd-col.gifts h6{color:var(--gold)}
+.dd-col.challenges h6{color:#9b7fb8}
+.dd-col ul{list-style:none}
+.dd-col li{font-size:.92rem;font-weight:300;padding:5px 0 5px 18px;position:relative}
+.dd-col.gifts li::before{content:"+";position:absolute;left:0;color:var(--gold);font-weight:600}
+.dd-col.challenges li::before{content:"–";position:absolute;left:2px;color:#9b7fb8;font-weight:600}
+.dest-card .leccion{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-weight:300;text-align:center}
+.dest-card .lec-label{display:block;font-family:'Karla',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.interp{max-width:560px;margin:24px auto 0;font-weight:300}
+.interp h5{font-family:'Cormorant Garamond',serif;color:var(--purple);font-size:1.35rem;margin:20px 0 4px}
+.karmic{margin-top:26px}
+.karmic .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.karmic .chip{
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--lavender);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--purple);background:var(--lavender-soft);
+}
+.result-cta{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.result-cta p{font-weight:300;margin-bottom:18px}
+.calc-note{font-size:.78rem;opacity:.6;margin-top:26px;text-align:center;font-weight:300}
+
+/* ───── pacotes ───── */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px;align-items:stretch}
+@media(max-width:900px){.plans{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+.plan{
+  background:#FFFDF9;border:1px solid var(--line);border-radius:20px;
+  padding:36px 30px;display:flex;flex-direction:column;position:relative;
+}
+.plan.featured{background:var(--purple);border-color:var(--purple)}
+.plan.featured h3,.plan.featured li{color:var(--ivory)}
+.plan.featured .plan-tag{color:var(--gold-light)}
+.plan.featured li::before{color:var(--gold-light)}
+.ribbon{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#fff;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 16px;border-radius:99px;white-space:nowrap;
+}
+.plan-tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:600}
+.plan h3{font-size:1.7rem;margin-bottom:16px}
+.plan ul{list-style:none;flex:1;margin-bottom:24px}
+.plan li{
+  font-size:.92rem;font-weight:300;padding:8px 0 8px 22px;position:relative;
+  border-bottom:1px solid rgba(182,137,58,.16);
+}
+.plan li:last-child{border-bottom:none}
+.plan li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:.7rem;top:11px}
+.price-box{text-align:center;margin-bottom:18px}
+.price-box .label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.price-box .price{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--purple)}
+.plan.featured .price-box .price{color:var(--gold-light)}
+.plan .btn{justify-content:center}
+.plan.featured .btn-line{border-color:var(--gold-light);color:var(--ivory)}
+
+/* ───── como funciona ───── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:48px;counter-reset:step}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{counter-increment:step;border-top:1px solid var(--line);padding-top:22px;position:relative}
+.step::before{
+  content:counter(step,decimal-leading-zero);
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);
+  display:block;margin-bottom:8px;
+}
+.step h3{font-size:1.3rem;margin-bottom:6px}
+.step p{font-size:.93rem;font-weight:300}
+
+/* ───── footer ───── */
+footer{background:var(--purple-deep);color:var(--lavender);padding:54px 0 40px;text-align:center}
+footer .brand-name{color:var(--ivory);font-size:1.4rem}
+footer .values{display:flex;gap:10px;justify-content:center;align-items:center;margin:18px 0;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;flex-wrap:wrap}
+footer .values span.sep{color:var(--gold-light)}
+footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-weight:300}
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:60;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--purple);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 28px rgba(42,30,69,.4);transition:transform .2s ease;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:27px;height:27px;fill:var(--ivory)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#topo" aria-label="Numerologia e Luz">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4 L35 32 H5 Z" stroke="#B6893A" stroke-width="1.4"/>
+        <circle cx="20" cy="22" r="5.2" stroke="#3A2A5D" stroke-width="1.4"/>
+        <circle cx="20" cy="22" r="1.8" fill="#3A2A5D"/>
+      </svg>
+      <span class="brand-name">Numerologia <em>e Luz</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação">
+      <a href="#sobre" data-i18n="nav_about">A Numerologia</a>
+      <a href="#calculadora" data-i18n="nav_calc">Cálculo grátis</a>
+      <a href="#pacotes" data-i18n="nav_plans">Cartas</a>
+      <a href="#como" data-i18n="nav_how">Como funciona</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Idioma">
+      <button id="btn-pt" class="active" onclick="setLang('pt')">PT</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<div class="hero">
+  <span class="bg-num" style="top:30px;left:4%">7</span>
+  <span class="bg-num" style="bottom:-30px;right:5%">3</span>
+  <div class="ornament" aria-hidden="true">
+    <svg width="190" height="74" viewBox="0 0 190 74" fill="none">
+      <path d="M95 6 L122 56 H68 Z" stroke="#B6893A" stroke-width="1.2"/>
+      <ellipse cx="95" cy="38" rx="11" ry="7.5" stroke="#3A2A5D" stroke-width="1.2"/>
+      <circle cx="95" cy="38" r="3" fill="#3A2A5D"/>
+      <path d="M28 30 a11 11 0 1 0 8 19 a13.5 13.5 0 1 1 -8 -19Z" fill="#B6893A" opacity=".75"/>
+      <g stroke="#B6893A" stroke-width="1.1">
+        <path d="M160 26 v22 M149 37 h22 M152.5 29.5 l15 15 M167.5 29.5 l-15 15"/>
+      </g>
+      <circle cx="160" cy="37" r="3.4" fill="#FBF6EE" stroke="#B6893A" stroke-width="1.1"/>
+      <g fill="#B6893A"><circle cx="58" cy="14" r="1.4"/><circle cx="136" cy="10" r="1.7"/><circle cx="178" cy="60" r="1.4"/><circle cx="14" cy="58" r="1.7"/></g>
+    </svg>
+  </div>
+  <h1>Numerologia<br><span class="luz" data-i18n="hero_luz">e Luz</span></h1>
+  <div class="divider" aria-hidden="true">✦</div>
+  <p class="sub" data-i18n-html="hero_sub">Seu nome e sua data de nascimento guardam um mapa. A <strong>Numerologia Pitagórica</strong> traduz esses números em autoconhecimento, clareza e propósito.</p>
+  <div class="cta-row">
+    <a class="btn btn-gold" href="#calculadora" data-i18n="hero_cta1">Calcule grátis seus números</a>
+    <a class="btn btn-line" href="#pacotes" data-i18n="hero_cta2">Conheça as cartas</a>
+  </div>
+</div>
+
+<!-- O QUE É -->
+<section id="sobre">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="about_eyebrow">O que é</span>
+    <h2 class="sec-title" data-i18n="about_title">A linguagem dos números</h2>
+    <p class="sec-intro" data-i18n="about_intro">A Numerologia é um estudo milenar, sistematizado pelo filósofo grego Pitágoras, que parte de uma ideia simples: tudo no universo vibra — e cada vibração pode ser expressa por um número. Ao traduzir seu nome completo e sua data de nascimento em números, ela revela padrões da sua essência, dos seus talentos e dos ciclos que você atravessa.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="glyph" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 4 L29 28 H5 Z" stroke="#B6893A" stroke-width="1.3"/><circle cx="17" cy="20" r="3.4" stroke="#B6893A" stroke-width="1.3"/></svg>
+        </div>
+        <h3 data-i18n="p1_title">Origem pitagórica</h3>
+        <p data-i18n="p1_text">No método de Pitágoras, cada letra do alfabeto corresponde a um número de 1 a 9. É a escola de numerologia mais difundida no Ocidente — a mesma que usamos em todas as nossas análises.</p>
+      </div>
+      <div class="pillar">
+        <div class="glyph" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="12" stroke="#B6893A" stroke-width="1.3"/><path d="M17 9 v8 l5 4" stroke="#B6893A" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="p2_title">Nome + data de nascimento</h3>
+        <p data-i18n="p2_text">Seu nome completo de registro revela como você se expressa no mundo. Sua data de nascimento revela seu caminho de destino e as lições que sua alma veio aprender.</p>
+      </div>
+      <div class="pillar">
+        <div class="glyph" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 5 c3 5 9 7 9 13 a9 9 0 1 1 -18 0 c0 -6 6 -8 9 -13Z" stroke="#B6893A" stroke-width="1.3"/></svg>
+        </div>
+        <h3 data-i18n="p3_title">Autoconhecimento prático</h3>
+        <p data-i18n="p3_text">Mais do que prever, a Numerologia orienta: ajuda a tomar decisões alinhadas com a sua essência — na carreira, nos relacionamentos e nos momentos de mudança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section id="calculadora">
+  <div class="wrap center">
+    <span class="eyebrow" data-i18n="calc_eyebrow">Grátis para você</span>
+    <h2 class="sec-title" data-i18n="calc_title">Descubra seus números agora</h2>
+    <p class="sec-intro" data-i18n="calc_intro">Um primeiro encontro com o seu mapa: calcule gratuitamente seu Número de Destino, seu Número de Expressão e suas Lições Kármicas.</p>
+
+    <div class="calc-card">
+      <div class="field">
+        <label for="nome" data-i18n="calc_name_label">Nome completo de registro</label>
+        <input type="text" id="nome" autocomplete="name" data-i18n-ph="calc_name_ph" placeholder="Ex.: Maria da Silva Santos">
+        <p class="hint" data-i18n="calc_name_hint">Use o nome que está na sua certidão de nascimento.</p>
+      </div>
+      <div class="field">
+        <label for="data" data-i18n="calc_date_label">Data de nascimento</label>
+        <input type="date" id="data">
+      </div>
+      <button class="btn btn-gold" onclick="calcular()" data-i18n="calc_btn">✦ Revelar meus números</button>
+
+      <div id="resultado" aria-live="polite">
+        <div class="num-circles">
+          <div class="num-circle">
+            <div class="ring"><span class="star" aria-hidden="true">✦</span><span class="n" id="num-destino">–</span></div>
+            <h4 data-i18n="r_destiny">Número de Destino</h4>
+            <p class="clave" id="clave-destino"></p>
+          </div>
+          <div class="num-circle">
+            <div class="ring"><span class="star" aria-hidden="true">✦</span><span class="n" id="num-expressao">–</span></div>
+            <h4 data-i18n="r_expression">Número de Expressão</h4>
+            <p class="clave" id="clave-expressao"></p>
+          </div>
+        </div>
+
+        <div class="dest-card">
+          <p class="mision"><span class="mis-label" data-i18n="r_mision">Missão</span> <span id="dest-mision"></span></p>
+          <div class="dd-grid">
+            <div class="dd-col gifts">
+              <h6 data-i18n="r_gifts">Dons</h6>
+              <ul id="dest-dones"></ul>
+            </div>
+            <div class="dd-col challenges">
+              <h6 data-i18n="r_challenges">Desafios</h6>
+              <ul id="dest-desafios"></ul>
+            </div>
+          </div>
+          <p class="leccion"><span class="lec-label" data-i18n="r_leccion">Lição kármica</span><span id="dest-leccion"></span></p>
+        </div>
+
+        <div class="interp">
+          <h5 data-i18n="r_expression_h">Sua Expressão</h5>
+          <p id="interp-expressao"></p>
+        </div>
+
+        <div class="karmic">
+          <h5 style="font-family:'Cormorant Garamond',serif;color:var(--purple);font-size:1.35rem" data-i18n="r_karmic_h">Lições Kármicas</h5>
+          <p id="karmic-text" style="font-weight:300;max-width:560px;margin:6px auto 0"></p>
+          <div class="chips" id="karmic-chips"></div>
+        </div>
+        <div class="result-cta">
+          <p data-i18n="r_cta_text">Isso é só a superfície. Sua Carta Numerológica completa interpreta todos os seus números, ciclos e potenciais — feita pessoalmente para você.</p>
+          <a class="btn btn-gold" id="wa-result" href="#" target="_blank" rel="noopener" data-i18n="r_cta_btn">Quero minha carta completa</a>
+        </div>
+      </div>
+      <p class="calc-note" data-i18n="calc_note">✦ Cálculo pelo método pitagórico. Seus dados não são armazenados — tudo acontece aqui, no seu navegador.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES -->
+<section id="pacotes">
+  <div class="wrap center">
+    <span class="eyebrow" data-i18n="plans_eyebrow">Cartas numerológicas</span>
+    <h2 class="sec-title" data-i18n="plans_title">Escolha a profundidade da sua jornada</h2>
+    <p class="sec-intro" data-i18n="plans_intro">Cada carta é elaborada pessoalmente, número por número, e entregue em PDF. Nada de relatórios automáticos.</p>
+
+    <div class="plans">
+      <!-- ESSENCIAL -->
+      <div class="plan">
+        <p class="plan-tag" data-i18n="pl1_tag">Primeiro passo</p>
+        <h3 data-i18n="pl1_name">Carta Essencial</h3>
+        <ul>
+          <li data-i18n="pl1_i1">Número de Destino</li>
+          <li data-i18n="pl1_i2">Número da Alma</li>
+          <li data-i18n="pl1_i3">Número da Personalidade</li>
+          <li data-i18n="pl1_i4">Número de Expressão</li>
+          <li data-i18n="pl1_i5">Missão de Vida</li>
+          <li data-i18n="pl1_i6">Talentos e potenciais naturais</li>
+          <li data-i18n="pl1_i7">Desafios e aprendizados</li>
+          <li data-i18n="pl1_i8">Ciclo pessoal atual</li>
+          <li data-i18n="pl1_i9">Interpretação detalhada em PDF</li>
+        </ul>
+        <div class="price-box">
+          <p class="label" data-i18n="pl_invest">Investimento</p>
+          <p class="price" data-price="essencial">R$ 147</p>
+        </div>
+        <a class="btn btn-line wa-plan" data-plan="Essencial" href="#" target="_blank" rel="noopener" data-i18n="pl_cta">Solicitar pelo WhatsApp</a>
+      </div>
+
+      <!-- COMPLETA -->
+      <div class="plan featured">
+        <span class="ribbon" data-i18n="pl2_ribbon">Mais escolhida</span>
+        <p class="plan-tag" data-i18n="pl2_tag">Essência e ciclos de vida</p>
+        <h3 data-i18n="pl2_name">Carta Completa</h3>
+        <ul>
+          <li data-i18n="pl2_i1">Tudo da Carta Essencial</li>
+          <li data-i18n="pl2_i2">Dons e talentos ocultos</li>
+          <li data-i18n="pl2_i3">Lições e dívidas kármicas</li>
+          <li data-i18n="pl2_i4">Desafios de vida</li>
+          <li data-i18n="pl2_i5">Pináculos e ciclos evolutivos</li>
+          <li data-i18n="pl2_i6">Ano pessoal atual</li>
+          <li data-i18n="pl2_i7">Profissão e prosperidade</li>
+          <li data-i18n="pl2_i8">Relacionamentos e compatibilidades</li>
+          <li data-i18n="pl2_i9">Relatório completo em PDF</li>
+        </ul>
+        <div class="price-box">
+          <p class="label" data-i18n="pl_invest">Investimento</p>
+          <p class="price" data-price="completa">R$ 297</p>
+        </div>
+        <a class="btn btn-line wa-plan" data-plan="Completa" href="#" target="_blank" rel="noopener" data-i18n="pl_cta">Solicitar pelo WhatsApp</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan">
+        <p class="plan-tag" data-i18n="pl3_tag">Experiência completa</p>
+        <h3 data-i18n="pl3_name">Premium + Sessão</h3>
+        <ul>
+          <li data-i18n="pl3_i1">Tudo da Carta Completa</li>
+          <li data-i18n="pl3_i2">Análise profissional e financeira</li>
+          <li data-i18n="pl3_i3">Ciclos e previsões personalizadas</li>
+          <li data-i18n="pl3_i4">Guia de desenvolvimento pessoal</li>
+          <li data-i18n="pl3_i5">Sessão online ao vivo (áudio ou vídeo)</li>
+          <li data-i18n="pl3_i6">Respostas às suas principais dúvidas</li>
+          <li data-i18n="pl3_i7">Clareza para decisões e próximos passos</li>
+          <li data-i18n="pl3_i8">Relatório exclusivo em PDF</li>
+        </ul>
+        <div class="price-box">
+          <p class="label" data-i18n="pl_invest">Investimento</p>
+          <p class="price" data-price="premium">R$ 497</p>
+        </div>
+        <a class="btn btn-line wa-plan" data-plan="Premium + Sessão" href="#" target="_blank" rel="noopener" data-i18n="pl_cta">Solicitar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="how_eyebrow">Como funciona</span>
+    <h2 class="sec-title" data-i18n="how_title">Da mensagem à sua carta</h2>
+    <div class="steps">
+      <div class="step">
+        <h3 data-i18n="s1_title">Você entra em contato</h3>
+        <p data-i18n="s1_text">Pelo WhatsApp, você escolhe sua carta e envia seu nome completo de registro e sua data de nascimento.</p>
+      </div>
+      <div class="step">
+        <h3 data-i18n="s2_title">A análise é feita à mão</h3>
+        <p data-i18n="s2_text">Cada número do seu mapa é calculado e interpretado pessoalmente, com o cuidado que um mapa único merece.</p>
+      </div>
+      <div class="step">
+        <h3 data-i18n="s3_title">Você recebe e conversa</h3>
+        <p data-i18n="s3_text">Sua carta chega em PDF para consultar sempre que quiser. No plano Premium, uma sessão ao vivo aprofunda cada detalhe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand-name">Numerologia <em style="color:var(--gold-light);font-style:italic">e Luz</em></span>
+    <div class="values">
+      <span data-i18n="f_v1">Autoconhecimento</span><span class="sep">✦</span>
+      <span data-i18n="f_v2">Clareza</span><span class="sep">✦</span>
+      <span data-i18n="f_v3">Propósito</span>
+    </div>
+    <small data-i18n="f_note">© 2026 Numerologia e Luz · A Numerologia é uma ferramenta de autoconhecimento e não substitui orientação médica, psicológica, jurídica ou financeira.</small>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.42-4.4-1.16l-.32-.18-3.06.78.8-2.98-.2-.32A8.18 8.18 0 1 1 12 20.2Zm4.52-6.13c-.25-.12-1.47-.72-1.7-.8-.22-.09-.39-.12-.55.12-.16.25-.63.8-.77.97-.14.16-.28.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.16 1.74 2.65 4.2 3.72.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+</a>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   CONFIGURAÇÃO — edite aqui ✏️
+   Número do WhatsApp com código do país, só dígitos.
+   Ex.: Brasil (91) 99999-9999 → "5591999999999"
+        Argentina 11 5555-5555 → "5491155555555"
+═════════════════════════════════════════════════════════════ */
+const WHATSAPP = "5500000000000"; // ← TROCAR PELO NÚMERO REAL
+
+/* ───────────────── i18n ───────────────── */
+const I18N = {
+pt:{
+ nav_about:"A Numerologia", nav_calc:"Cálculo grátis", nav_plans:"Cartas", nav_how:"Como funciona",
+ hero_luz:"e Luz",
+ hero_sub:"Seu nome e sua data de nascimento guardam um mapa. A <strong>Numerologia Pitagórica</strong> traduz esses números em autoconhecimento, clareza e propósito.",
+ hero_cta1:"Calcule grátis seus números", hero_cta2:"Conheça as cartas",
+ about_eyebrow:"O que é", about_title:"A linguagem dos números",
+ about_intro:"A Numerologia é um estudo milenar, sistematizado pelo filósofo grego Pitágoras, que parte de uma ideia simples: tudo no universo vibra — e cada vibração pode ser expressa por um número. Ao traduzir seu nome completo e sua data de nascimento em números, ela revela padrões da sua essência, dos seus talentos e dos ciclos que você atravessa.",
+ p1_title:"Origem pitagórica", p1_text:"No método de Pitágoras, cada letra do alfabeto corresponde a um número de 1 a 9. É a escola de numerologia mais difundida no Ocidente — a mesma que usamos em todas as nossas análises.",
+ p2_title:"Nome + data de nascimento", p2_text:"Seu nome completo de registro revela como você se expressa no mundo. Sua data de nascimento revela seu caminho de destino e as lições que sua alma veio aprender.",
+ p3_title:"Autoconhecimento prático", p3_text:"Mais do que prever, a Numerologia orienta: ajuda a tomar decisões alinhadas com a sua essência — na carreira, nos relacionamentos e nos momentos de mudança.",
+ calc_eyebrow:"Grátis para você", calc_title:"Descubra seus números agora",
+ calc_intro:"Um primeiro encontro com o seu mapa: calcule gratuitamente seu Número de Destino, seu Número de Expressão e suas Lições Kármicas.",
+ calc_name_label:"Nome completo de registro", calc_name_ph:"Ex.: Maria da Silva Santos",
+ calc_name_hint:"Use o nome que está na sua certidão de nascimento.",
+ calc_date_label:"Data de nascimento", calc_btn:"✦ Revelar meus números",
+ r_destiny:"Número de Destino", r_expression:"Número de Expressão",
+ r_destiny_h:"Seu Destino", r_expression_h:"Sua Expressão", r_karmic_h:"Lições Kármicas",
+ r_mision:"Missão", r_gifts:"Dons", r_challenges:"Desafios", r_leccion:"Lição kármica",
+ r_cta_text:"Isso é só a superfície. Sua Carta Numerológica completa interpreta todos os seus números, ciclos e potenciais — feita pessoalmente para você.",
+ r_cta_btn:"Quero minha carta completa",
+ calc_note:"✦ Cálculo pelo método pitagórico. Seus dados não são armazenados — tudo acontece aqui, no seu navegador.",
+ plans_eyebrow:"Cartas numerológicas", plans_title:"Escolha a profundidade da sua jornada",
+ plans_intro:"Cada carta é elaborada pessoalmente, número por número, e entregue em PDF. Nada de relatórios automáticos.",
+ pl_invest:"Investimento", pl_cta:"Solicitar pelo WhatsApp",
+ pl1_tag:"Primeiro passo", pl1_name:"Carta Essencial",
+ pl1_i1:"Número de Destino", pl1_i2:"Número da Alma", pl1_i3:"Número da Personalidade",
+ pl1_i4:"Número de Expressão", pl1_i5:"Missão de Vida", pl1_i6:"Talentos e potenciais naturais",
+ pl1_i7:"Desafios e aprendizados", pl1_i8:"Ciclo pessoal atual", pl1_i9:"Interpretação detalhada em PDF",
+ pl2_ribbon:"Mais escolhida", pl2_tag:"Essência e ciclos de vida", pl2_name:"Carta Completa",
+ pl2_i1:"Tudo da Carta Essencial", pl2_i2:"Dons e talentos ocultos", pl2_i3:"Lições e dívidas kármicas",
+ pl2_i4:"Desafios de vida", pl2_i5:"Pináculos e ciclos evolutivos", pl2_i6:"Ano pessoal atual",
+ pl2_i7:"Profissão e prosperidade", pl2_i8:"Relacionamentos e compatibilidades", pl2_i9:"Relatório completo em PDF",
+ pl3_tag:"Experiência completa", pl3_name:"Premium + Sessão",
+ pl3_i1:"Tudo da Carta Completa", pl3_i2:"Análise profissional e financeira", pl3_i3:"Ciclos e previsões personalizadas",
+ pl3_i4:"Guia de desenvolvimento pessoal", pl3_i5:"Sessão online ao vivo (áudio ou vídeo)",
+ pl3_i6:"Respostas às suas principais dúvidas", pl3_i7:"Clareza para decisões e próximos passos", pl3_i8:"Relatório exclusivo em PDF",
+ how_eyebrow:"Como funciona", how_title:"Da mensagem à sua carta",
+ s1_title:"Você entra em contato", s1_text:"Pelo WhatsApp, você escolhe sua carta e envia seu nome completo de registro e sua data de nascimento.",
+ s2_title:"A análise é feita à mão", s2_text:"Cada número do seu mapa é calculado e interpretado pessoalmente, com o cuidado que um mapa único merece.",
+ s3_title:"Você recebe e conversa", s3_text:"Sua carta chega em PDF para consultar sempre que quiser. No plano Premium, uma sessão ao vivo aprofunda cada detalhe.",
+ f_v1:"Autoconhecimento", f_v2:"Clareza", f_v3:"Propósito",
+ f_note:"© 2026 Numerologia e Luz · A Numerologia é uma ferramenta de autoconhecimento e não substitui orientação médica, psicológica, jurídica ou financeira.",
+ err_name:"Digite seu nome completo (apenas letras).", err_date:"Selecione sua data de nascimento.",
+ karmic_none:"Seu nome contém todas as vibrações de 1 a 9 — não há lições kármicas pendentes pelo nome. Um sinal de equilíbrio raro.",
+ karmic_some:"Os números ausentes no seu nome apontam energias que sua alma veio desenvolver nesta vida:",
+ wa_general:"Olá! Visitei o site Numerologia e Luz e quero saber mais sobre as cartas numerológicas. ✨",
+ wa_plan:"Olá! Quero solicitar a Carta {plan}. Meu nome completo é ____ e nasci em __/__/____. ✨",
+ wa_result:"Olá! Calculei meus números no site (Destino {d}, Expressão {e}) e quero minha Carta Numerológica completa. ✨",
+ prices:{essencial:"R$ 147",completa:"R$ 297",premium:"R$ 497"}
+},
+es:{
+ nav_about:"La Numerología", nav_calc:"Cálculo gratis", nav_plans:"Cartas", nav_how:"Cómo funciona",
+ hero_luz:"y Luz",
+ hero_sub:"Tu nombre y tu fecha de nacimiento guardan un mapa. La <strong>Numerología Pitagórica</strong> traduce esos números en autoconocimiento, claridad y propósito.",
+ hero_cta1:"Calculá gratis tus números", hero_cta2:"Conocé las cartas",
+ about_eyebrow:"Qué es", about_title:"El lenguaje de los números",
+ about_intro:"La Numerología es un estudio milenario, sistematizado por el filósofo griego Pitágoras, que parte de una idea simple: todo en el universo vibra — y cada vibración puede expresarse con un número. Al traducir tu nombre completo y tu fecha de nacimiento en números, revela patrones de tu esencia, tus talentos y los ciclos que atravesás.",
+ p1_title:"Origen pitagórico", p1_text:"En el método de Pitágoras, cada letra del alfabeto corresponde a un número del 1 al 9. Es la escuela de numerología más difundida en Occidente — la misma que usamos en todos nuestros análisis.",
+ p2_title:"Nombre + fecha de nacimiento", p2_text:"Tu nombre completo de registro revela cómo te expresás en el mundo. Tu fecha de nacimiento revela tu camino de destino y las lecciones que tu alma vino a aprender.",
+ p3_title:"Autoconocimiento práctico", p3_text:"Más que predecir, la Numerología orienta: ayuda a tomar decisiones alineadas con tu esencia — en la carrera, los vínculos y los momentos de cambio.",
+ calc_eyebrow:"Gratis para vos", calc_title:"Descubrí tus números ahora",
+ calc_intro:"Un primer encuentro con tu mapa: calculá gratis tu Número de Destino, tu Número de Expresión y tus Lecciones Kármicas.",
+ calc_name_label:"Nombre completo de registro", calc_name_ph:"Ej.: María Fernández García",
+ calc_name_hint:"Usá el nombre que figura en tu partida de nacimiento.",
+ calc_date_label:"Fecha de nacimiento", calc_btn:"✦ Revelar mis números",
+ r_destiny:"Número de Destino", r_expression:"Número de Expresión",
+ r_destiny_h:"Tu Destino", r_expression_h:"Tu Expresión", r_karmic_h:"Lecciones Kármicas",
+ r_mision:"Misión", r_gifts:"Dones", r_challenges:"Desafíos", r_leccion:"Lección kármica",
+ r_cta_text:"Esto es solo la superficie. Tu Carta Numerológica completa interpreta todos tus números, ciclos y potenciales — hecha personalmente para vos.",
+ r_cta_btn:"Quiero mi carta completa",
+ calc_note:"✦ Cálculo por el método pitagórico. Tus datos no se almacenan — todo sucede acá, en tu navegador.",
+ plans_eyebrow:"Cartas numerológicas", plans_title:"Elegí la profundidad de tu camino",
+ plans_intro:"Cada carta se elabora personalmente, número por número, y se entrega en PDF. Nada de informes automáticos.",
+ pl_invest:"Inversión", pl_cta:"Solicitar por WhatsApp",
+ pl1_tag:"Primer paso", pl1_name:"Carta Esencial",
+ pl1_i1:"Número de Destino", pl1_i2:"Número del Alma", pl1_i3:"Número de Personalidad",
+ pl1_i4:"Número de Expresión", pl1_i5:"Misión de Vida", pl1_i6:"Talentos y potenciales naturales",
+ pl1_i7:"Desafíos y aprendizajes", pl1_i8:"Ciclo personal actual", pl1_i9:"Interpretación detallada en PDF",
+ pl2_ribbon:"La más elegida", pl2_tag:"Esencia y ciclos de vida", pl2_name:"Carta Completa",
+ pl2_i1:"Todo de la Carta Esencial", pl2_i2:"Dones y talentos ocultos", pl2_i3:"Lecciones y deudas kármicas",
+ pl2_i4:"Desafíos de vida", pl2_i5:"Pináculos y ciclos evolutivos", pl2_i6:"Año personal actual",
+ pl2_i7:"Profesión y prosperidad", pl2_i8:"Relaciones y compatibilidades", pl2_i9:"Informe completo en PDF",
+ pl3_tag:"Experiencia completa", pl3_name:"Premium + Sesión",
+ pl3_i1:"Todo de la Carta Completa", pl3_i2:"Análisis profesional y financiero", pl3_i3:"Ciclos y previsiones personalizadas",
+ pl3_i4:"Guía de desarrollo personal", pl3_i5:"Sesión online en vivo (audio o video)",
+ pl3_i6:"Respuestas a tus principales dudas", pl3_i7:"Claridad para decisiones y próximos pasos", pl3_i8:"Informe exclusivo en PDF",
+ how_eyebrow:"Cómo funciona", how_title:"Del mensaje a tu carta",
+ s1_title:"Te ponés en contacto", s1_text:"Por WhatsApp, elegís tu carta y enviás tu nombre completo de registro y tu fecha de nacimiento.",
+ s2_title:"El análisis se hace a mano", s2_text:"Cada número de tu mapa se calcula e interpreta personalmente, con el cuidado que un mapa único merece.",
+ s3_title:"Recibís y conversamos", s3_text:"Tu carta llega en PDF para consultarla cuando quieras. En el plan Premium, una sesión en vivo profundiza cada detalle.",
+ f_v1:"Autoconocimiento", f_v2:"Claridad", f_v3:"Propósito",
+ f_note:"© 2026 Numerología y Luz · La Numerología es una herramienta de autoconocimiento y no sustituye orientación médica, psicológica, jurídica ni financiera.",
+ err_name:"Escribí tu nombre completo (solo letras).", err_date:"Seleccioná tu fecha de nacimiento.",
+ karmic_none:"Tu nombre contiene todas las vibraciones del 1 al 9 — no hay lecciones kármicas pendientes por el nombre. Una señal de equilibrio poco común.",
+ karmic_some:"Los números ausentes en tu nombre señalan energías que tu alma vino a desarrollar en esta vida:",
+ wa_general:"¡Hola! Visité el sitio Numerología y Luz y quiero saber más sobre las cartas numerológicas. ✨",
+ wa_plan:"¡Hola! Quiero solicitar la Carta {plan}. Mi nombre completo es ____ y nací el __/__/____. ✨",
+ wa_result:"¡Hola! Calculé mis números en el sitio (Destino {d}, Expresión {e}) y quiero mi Carta Numerológica completa. ✨",
+ prices:{essencial:"Consultar",completa:"AR$ 83.000",premium:"AR$ 139.000"},
+ plan_names:{"Essencial":"Esencial","Completa":"Completa","Premium + Sessão":"Premium + Sesión"}
+}
+};
+
+/* ════════════════════════════════════════════════════════════
+   INTERPRETAÇÕES DO KARMA DESTINO (conteúdo grátis)
+   m = missão · d = dons · x = desafios · l = lição kármica · c = palavra-chave
+═════════════════════════════════════════════════════════════ */
+const DEST = {
+pt:{
+ 1:{m:"aprender liderança e independência.",d:["Iniciativa","Criatividade","Capacidade de empreender"],x:["Ego","Impaciência","Individualismo excessivo"],l:"Aprender a liderar sem impor.",c:"Liderança"},
+ 2:{m:"desenvolver cooperação e diplomacia.",d:["Sensibilidade","Empatia","Capacidade de mediar"],x:["Dependência emocional","Insegurança","Medo do conflito"],l:"Confiar em si mesmo e manter o equilíbrio emocional.",c:"Cooperação"},
+ 3:{m:"expressar-se e comunicar.",d:["Criatividade","Alegria","Talento artístico"],x:["Dispersão","Superficialidade","Excesso de otimismo"],l:"Comunicar com autenticidade e responsabilidade.",c:"Expressão"},
+ 4:{m:"construir bases sólidas.",d:["Organização","Disciplina","Perseverança"],x:["Rigidez","Excesso de controle","Medo da mudança"],l:"Aprender a combinar estrutura com flexibilidade.",c:"Construção"},
+ 5:{m:"experimentar liberdade e transformação.",d:["Adaptabilidade","Carisma","Espírito aventureiro"],x:["Inconstância","Impulsividade","Excessos"],l:"Usar a liberdade com responsabilidade.",c:"Liberdade"},
+ 6:{m:"servir e cuidar.",d:["Amor","Responsabilidade","Senso de família"],x:["Perfeccionismo","Sacrifício excessivo","Controle emocional"],l:"Aprender a cuidar sem superproteger.",c:"Serviço"},
+ 7:{m:"buscar conhecimento e sabedoria.",d:["Intuição","Espiritualidade","Capacidade analítica"],x:["Isolamento","Desconfiança","Excesso de racionalidade"],l:"Confiar na intuição e abrir-se ao mundo.",c:"Sabedoria"},
+ 8:{m:"aprender o uso correto do poder e do dinheiro.",d:["Liderança","Ambição","Capacidade de gestão"],x:["Materialismo","Autoritarismo","Obsessão pelo sucesso"],l:"Utilizar o poder para beneficiar os outros.",c:"Poder"},
+ 9:{m:"servir à humanidade.",d:["Compaixão","Generosidade","Idealismo"],x:["Desilusão","Excesso de entrega","Dificuldade para fechar ciclos"],l:"Aprender o desapego e o perdão.",c:"Humanidade"},
+ 11:{m:"inspirar e elevar a consciência.",d:["Intuição extraordinária","Sensibilidade espiritual","Capacidade de inspirar"],x:["Nervosismo","Ansiedade","Hipersensibilidade"],l:"Transformar a inspiração em ação concreta.",c:"Inspiração · canal espiritual"},
+ 22:{m:"materializar grandes projetos para o bem coletivo.",d:["Liderança excepcional","Visão prática","Construção em grande escala"],x:["Pressão excessiva","Medo do fracasso","Autoexigência"],l:"Converter os sonhos em realidades duradouras.",c:"Grande Construtor"}
+},
+es:{
+ 1:{m:"aprender liderazgo e independencia.",d:["Iniciativa","Creatividad","Capacidad para emprender"],x:["Ego","Impaciencia","Individualismo excesivo"],l:"Aprender a liderar sin imponer.",c:"Liderazgo"},
+ 2:{m:"desarrollar cooperación y diplomacia.",d:["Sensibilidad","Empatía","Capacidad para mediar"],x:["Dependencia emocional","Inseguridad","Miedo al conflicto"],l:"Confiar en sí mismo y mantener el equilibrio emocional.",c:"Cooperación"},
+ 3:{m:"expresarse y comunicar.",d:["Creatividad","Alegría","Talento artístico"],x:["Dispersión","Superficialidad","Exceso de optimismo"],l:"Comunicar con autenticidad y responsabilidad.",c:"Expresión"},
+ 4:{m:"construir bases sólidas.",d:["Organización","Disciplina","Perseverancia"],x:["Rigidez","Exceso de control","Miedo al cambio"],l:"Aprender a combinar estructura con flexibilidad.",c:"Construcción"},
+ 5:{m:"experimentar libertad y transformación.",d:["Adaptabilidad","Carisma","Espíritu aventurero"],x:["Inconstancia","Impulsividad","Excesos"],l:"Usar la libertad con responsabilidad.",c:"Libertad"},
+ 6:{m:"servir y cuidar.",d:["Amor","Responsabilidad","Sentido de familia"],x:["Perfeccionismo","Sacrificio excesivo","Control emocional"],l:"Aprender a cuidar sin sobreproteger.",c:"Servicio"},
+ 7:{m:"buscar conocimiento y sabiduría.",d:["Intuición","Espiritualidad","Capacidad analítica"],x:["Aislamiento","Desconfianza","Exceso de racionalidad"],l:"Confiar en la intuición y abrirse al mundo.",c:"Sabiduría"},
+ 8:{m:"aprender el uso correcto del poder y del dinero.",d:["Liderazgo","Ambición","Capacidad de gestión"],x:["Materialismo","Autoritarismo","Obsesión por el éxito"],l:"Utilizar el poder para beneficiar a otros.",c:"Poder"},
+ 9:{m:"servir a la humanidad.",d:["Compasión","Generosidad","Idealismo"],x:["Desilusión","Exceso de entrega","Dificultad para cerrar ciclos"],l:"Aprender el desapego y el perdón.",c:"Humanidad"},
+ 11:{m:"inspirar y elevar la conciencia.",d:["Intuición extraordinaria","Sensibilidad espiritual","Capacidad de inspirar"],x:["Nerviosismo","Ansiedad","Hipersensibilidad"],l:"Transformar la inspiración en acción concreta.",c:"Inspiración · canal espiritual"},
+ 22:{m:"materializar grandes proyectos para el bien colectivo.",d:["Liderazgo excepcional","Visión práctica","Construcción a gran escala"],x:["Presión excesiva","Miedo al fracaso","Autoexigencia"],l:"Convertir los sueños en realidades duraderas.",c:"Gran Constructor"}
+}
+};
+
+/* Linha concisa do Número de Expressão (talento/forma de se expressar) */
+const EXPR = {
+pt:{
+ 1:"Você se expressa com liderança e originalidade — abre caminhos com a própria voz.",
+ 2:"Você se expressa com sensibilidade e tato — sua força está em unir e harmonizar.",
+ 3:"Você se expressa com criatividade e palavra — comunica, encanta e inspira.",
+ 4:"Você se expressa com método e confiabilidade — sua palavra constrói o que dura.",
+ 5:"Você se expressa com versatilidade e movimento — comunica liberdade e mudança.",
+ 6:"Você se expressa com cuidado e responsabilidade — acolhe e harmoniza os ambientes.",
+ 7:"Você se expressa com profundidade e análise — busca sentido antes das palavras.",
+ 8:"Você se expressa com autoridade e foco — sua presença organiza e realiza.",
+ 9:"Você se expressa com generosidade e amplitude — sua palavra acolhe a todos.",
+ 11:"Você se expressa como inspiração para os outros — uma sensibilidade que ilumina.",
+ 22:"Você se expressa como realizador de grandes ideias — visão que vira obra concreta."
+},
+es:{
+ 1:"Te expresás con liderazgo y originalidad — abrís caminos con tu propia voz.",
+ 2:"Te expresás con sensibilidad y tacto — tu fuerza está en unir y armonizar.",
+ 3:"Te expresás con creatividad y palabra — comunicás, encantás e inspirás.",
+ 4:"Te expresás con método y confiabilidad — tu palabra construye lo que perdura.",
+ 5:"Te expresás con versatilidad y movimiento — comunicás libertad y cambio.",
+ 6:"Te expresás con cuidado y responsabilidad — acogés y armonizás los ambientes.",
+ 7:"Te expresás con profundidad y análisis — buscás sentido antes de las palabras.",
+ 8:"Te expresás con autoridad y foco — tu presencia organiza y realiza.",
+ 9:"Te expresás con generosidad y amplitud — tu palabra acoge a todos.",
+ 11:"Te expresás como inspiración para los demás — una sensibilidad que ilumina.",
+ 22:"Te expresás como realizador de grandes ideas — visión que se vuelve obra concreta."
+}
+};
+
+let lang = 'pt';
+let lastResult = null;
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'es-AR';
+  document.getElementById('btn-pt').classList.toggle('active', l==='pt');
+  document.getElementById('btn-es').classList.toggle('active', l==='es');
+  const t = I18N[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(t[k]) el.textContent = t[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-html');
+    if(t[k]) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-ph');
+    if(t[k]) el.placeholder = t[k];
+  });
+  document.querySelectorAll('[data-price]').forEach(el=>{
+    el.textContent = t.prices[el.getAttribute('data-price')];
+  });
+  updateWaLinks();
+  if(lastResult) renderResult(lastResult);
+}
+
+function waUrl(msg){
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+}
+function updateWaLinks(){
+  const t = I18N[lang];
+  document.getElementById('wa-float').href = waUrl(t.wa_general);
+  document.querySelectorAll('.wa-plan').forEach(a=>{
+    let plan = a.getAttribute('data-plan');
+    if(lang==='es' && t.plan_names) plan = t.plan_names[plan] || plan;
+    a.href = waUrl(t.wa_plan.replace('{plan}', plan));
+  });
+  const r = document.getElementById('wa-result');
+  if(lastResult){
+    r.href = waUrl(t.wa_result.replace('{d}', lastResult.destino).replace('{e}', lastResult.expressao));
+  } else {
+    r.href = waUrl(t.wa_general);
+  }
+}
+
+/* ───────────────── numerologia pitagórica ───────────────── */
+const PYTH = {a:1,j:1,s:1,b:2,k:2,t:2,c:3,l:3,u:3,d:4,m:4,v:4,e:5,n:5,w:5,f:6,o:6,x:6,g:7,p:7,y:7,h:8,q:8,z:8,i:9,r:9};
+
+function normalize(name){
+  return name.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // remove acentos (ç→c, ñ→n, á→a…)
+    .replace(/[^a-z]/g,'');
+}
+function reduce(n){
+  while(n > 9 && n !== 11 && n !== 22){
+    n = String(n).split('').reduce((s,d)=>s+Number(d),0);
+  }
+  return n;
+}
+function destinyFromDate(iso){ // iso = "YYYY-MM-DD"
+  const digits = iso.replace(/\D/g,'').split('').map(Number);
+  return reduce(digits.reduce((s,d)=>s+d,0));
+}
+function expressionFromName(name){
+  const letters = normalize(name);
+  return reduce(letters.split('').reduce((s,ch)=>s+(PYTH[ch]||0),0));
+}
+function karmicLessons(name){
+  const present = new Set(normalize(name).split('').map(ch=>PYTH[ch]).filter(Boolean));
+  const missing = [];
+  for(let i=1;i<=9;i++) if(!present.has(i)) missing.push(i);
+  return missing;
+}
+
+function calcular(){
+  const t = I18N[lang];
+  const nome = document.getElementById('nome').value.trim();
+  const data = document.getElementById('data').value;
+  if(!nome || normalize(nome).length < 2){ alert(t.err_name); return; }
+  if(!data){ alert(t.err_date); return; }
+  lastResult = {
+    destino: destinyFromDate(data),
+    expressao: expressionFromName(nome),
+    karmic: karmicLessons(nome)
+  };
+  renderResult(lastResult);
+  document.getElementById('resultado').classList.add('show');
+  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function renderResult(r){
+  const t = I18N[lang];
+  const dest = DEST[lang][r.destino];
+  const expr = EXPR[lang][r.expressao];
+  document.getElementById('num-destino').textContent = r.destino;
+  document.getElementById('num-expressao').textContent = r.expressao;
+
+  // Card do Destino
+  document.getElementById('clave-destino').textContent = dest ? dest.c : '';
+  document.getElementById('clave-expressao').textContent = (DEST[lang][r.expressao]||{}).c || '';
+  document.getElementById('dest-mision').textContent = dest ? dest.m : '';
+  document.getElementById('dest-leccion').textContent = dest ? dest.l : '';
+  const ulD = document.getElementById('dest-dones');
+  const ulX = document.getElementById('dest-desafios');
+  ulD.innerHTML = ''; ulX.innerHTML = '';
+  if(dest){
+    dest.d.forEach(v=>{ const li=document.createElement('li'); li.textContent=v; ulD.appendChild(li); });
+    dest.x.forEach(v=>{ const li=document.createElement('li'); li.textContent=v; ulX.appendChild(li); });
+  }
+
+  // Expressão (linha concisa)
+  document.getElementById('interp-expressao').textContent = expr || '';
+
+  // Lições kármicas
+  const chips = document.getElementById('karmic-chips');
+  chips.innerHTML = '';
+  if(r.karmic.length === 0){
+    document.getElementById('karmic-text').textContent = t.karmic_none;
+  } else {
+    document.getElementById('karmic-text').textContent = t.karmic_some;
+    r.karmic.forEach(n=>{
+      const c = document.createElement('span');
+      c.className = 'chip'; c.textContent = n;
+      chips.appendChild(c);
+    });
+  }
+  updateWaLinks();
+}
+
+updateWaLinks();
+</script>
+</body>
+</html>
