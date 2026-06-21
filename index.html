@@ -533,8 +533,7 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
         <li data-i18n="vch_i3">Ideal para aniversários, Dia das Mães e datas especiais</li>
       </ul>
       <div class="cta-pair voucher-cta">
-        <a class="btn btn-gold wa-voucher" href="#" target="_blank" rel="noopener" data-i18n="vch_cta">Presentear pelo WhatsApp</a>
-        <a class="btn btn-line email-voucher" href="#" data-i18n="vch_cta_email">Presentear por e-mail</a>
+        <a class="btn btn-gold wa-voucher" href="#" target="_blank" rel="noopener" data-i18n="vch_cta">Comprar aqui</a>
       </div>
     </div>
   </div>
@@ -665,7 +664,7 @@ pt:{
  vch_i1:"Válido para qualquer uma das cartas",
  vch_i2:"Enviado em arte digital, pronto para presentear",
  vch_i3:"Ideal para aniversários, Dia das Mães e datas especiais",
- vch_cta:"Presentear pelo WhatsApp", vch_cta_email:"Presentear por e-mail",
+ vch_cta:"Comprar aqui", vch_cta_email:"Presentear por e-mail",
  vch_subj:"Quero presentear um Voucher — Numerologia e Luz",
  wa_voucher:"Olá! Quero presentear alguém com um Voucher de Numerologia. Pode me ajudar a escolher a carta? ✨",
  s1_title:"Você entra em contato", s1_text:"Pelo WhatsApp, você escolhe sua carta e envia seu nome completo de registro e sua data de nascimento.",
@@ -735,7 +734,7 @@ es:{
  vch_i1:"Válido para cualquiera de las cartas",
  vch_i2:"Enviado en arte digital, listo para regalar",
  vch_i3:"Ideal para cumpleaños, Día de la Madre y fechas especiales",
- vch_cta:"Regalar por WhatsApp", vch_cta_email:"Regalar por mail",
+ vch_cta:"Comprar aquí", vch_cta_email:"Regalar por mail",
  vch_subj:"Quiero regalar un Voucher — Numerología y Luz",
  wa_voucher:"¡Hola! Quiero regalarle a alguien un Voucher de Numerología. ¿Me ayudás a elegir la carta? ✨",
  s1_title:"Te ponés en contacto", s1_text:"Por WhatsApp, elegís tu carta y enviás tu nombre completo de registro y tu fecha de nacimiento.",
@@ -914,9 +913,7 @@ function updateWaLinks(){
 
   // Voucher / presente
   const wv = document.querySelector('.wa-voucher');
-  const ev = document.querySelector('.email-voucher');
   if(wv){ wv.href = waUrl(t.wa_voucher); }
-  if(ev){ ev.href = emailUrl(t.vch_subj, t.wa_voucher); }
 }
 
 /* ───────────────── numerologia pitagórica ───────────────── */
