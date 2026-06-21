@@ -52,12 +52,16 @@ header{
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--text)}
 .nav-links a:hover{color:var(--gold)}
-.lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang-toggle{display:flex;gap:6px;border:1px solid var(--line);border-radius:99px;padding:4px;background:var(--ivory)}
 .lang-toggle button{
-  background:none;border:none;padding:6px 14px;
-  font-size:.78rem;letter-spacing:.1em;color:var(--text);
+  display:flex;align-items:center;gap:6px;
+  background:none;border:none;padding:7px 12px;border-radius:99px;
+  font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--text);
+  transition:background .2s ease,color .2s ease;
 }
+.lang-toggle button .flag{font-size:1.15rem;line-height:1}
 .lang-toggle button.active{background:var(--purple);color:var(--ivory)}
+.lang-toggle button:not(.active):hover{background:var(--lavender-soft)}
 @media(max-width:760px){.nav-links a{display:none}}
 
 /* ───── hero ───── */
@@ -87,6 +91,10 @@ header{
 .btn-gold{background:var(--purple);color:var(--ivory);box-shadow:0 8px 24px rgba(58,42,93,.25)}
 .btn-gold:hover{box-shadow:0 12px 30px rgba(58,42,93,.35)}
 .btn-line{background:none;border:1px solid var(--gold);color:var(--purple)}
+.btn-email{margin-top:10px;background:none;border:1px solid var(--gold);color:var(--purple);width:100%;justify-content:center}
+.btn-email::before{content:"✉";margin-right:8px;font-size:.95em}
+.plan.featured .btn-email{border-color:var(--gold-light);color:var(--ivory)}
+#email-result{margin-top:10px}
 
 /* ───── sections ───── */
 section{padding:76px 0}
@@ -123,6 +131,11 @@ section{padding:76px 0}
   background:var(--ivory);font-family:'Karla',sans-serif;font-size:1rem;color:var(--text);
 }
 .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.date-row{display:flex;align-items:center;gap:10px}
+.date-row input{text-align:center;letter-spacing:.08em}
+.date-row #dia,.date-row #mes{flex:1}
+.date-row #ano{flex:1.6}
+.date-sep{color:var(--gold);font-size:1.2rem;font-family:'Cormorant Garamond',serif}
 .field .hint{font-size:.8rem;opacity:.65;margin-top:6px;font-weight:300}
 .calc-card .btn{width:100%;justify-content:center;margin-top:6px}
 
@@ -226,6 +239,16 @@ section{padding:76px 0}
 .step h3{font-size:1.3rem;margin-bottom:6px}
 .step p{font-size:.93rem;font-weight:300}
 
+/* ───── sobre a numeróloga ───── */
+#numerologa{background:linear-gradient(180deg,var(--ivory) 0%,var(--lavender-soft) 100%)}
+.bio-wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
+@media(max-width:760px){.bio-wrap{grid-template-columns:1fr;gap:24px}}
+.bio-aside .sec-title{margin-bottom:10px}
+.bio-loc{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:.9rem;letter-spacing:.04em}
+.bio-text p{margin-bottom:16px;font-weight:300}
+.bio-text p:first-child{font-size:1.12rem;color:var(--purple)}
+.bio-text strong{color:var(--purple);font-weight:600}
+
 /* ───── footer ───── */
 footer{background:var(--purple-deep);color:var(--lavender);padding:54px 0 40px;text-align:center}
 footer .brand-name{color:var(--ivory);font-size:1.4rem}
@@ -256,13 +279,14 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
     </a>
     <nav class="nav-links" aria-label="Navegação">
       <a href="#sobre" data-i18n="nav_about">A Numerologia</a>
+      <a href="#numerologa" data-i18n="nav_bio">Sobre Anahí</a>
       <a href="#calculadora" data-i18n="nav_calc">Cálculo grátis</a>
       <a href="#pacotes" data-i18n="nav_plans">Cartas</a>
       <a href="#como" data-i18n="nav_how">Como funciona</a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Idioma / Idioma">
-      <button id="btn-pt" class="active" onclick="setLang('pt')">PT</button>
-      <button id="btn-es" onclick="setLang('es')">ES</button>
+      <button id="btn-pt" class="active" onclick="setLang('pt')" aria-label="Português (Brasil)"><span class="flag" aria-hidden="true">🇧🇷</span>PT</button>
+      <button id="btn-es" onclick="setLang('es')" aria-label="Español (Argentina)"><span class="flag" aria-hidden="true">🇦🇷</span>ES</button>
     </div>
   </div>
 </header>
@@ -341,8 +365,15 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
         <p class="hint" data-i18n="calc_name_hint">Use o nome que está na sua certidão de nascimento.</p>
       </div>
       <div class="field">
-        <label for="data" data-i18n="calc_date_label">Data de nascimento</label>
-        <input type="date" id="data">
+        <label data-i18n="calc_date_label">Data de nascimento</label>
+        <div class="date-row">
+          <input type="text" id="dia" inputmode="numeric" maxlength="2" placeholder="DD" data-i18n-aria="aria_day" aria-label="Dia">
+          <span class="date-sep" aria-hidden="true">/</span>
+          <input type="text" id="mes" inputmode="numeric" maxlength="2" placeholder="MM" data-i18n-aria="aria_month" aria-label="Mês">
+          <span class="date-sep" aria-hidden="true">/</span>
+          <input type="text" id="ano" inputmode="numeric" maxlength="4" placeholder="AAAA" data-i18n-aria="aria_year" aria-label="Ano">
+        </div>
+        <p class="hint" data-i18n="calc_date_hint">Dia, mês e ano — ex.: 15 / 05 / 1985.</p>
       </div>
       <button class="btn btn-gold" onclick="calcular()" data-i18n="calc_btn">✦ Revelar meus números</button>
 
@@ -494,6 +525,21 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
   </div>
 </section>
 
+<!-- SOBRE A NUMERÓLOGA -->
+<section id="numerologa">
+  <div class="wrap bio-wrap">
+    <div class="bio-aside">
+      <span class="eyebrow" data-i18n="bio_eyebrow">Sobre</span>
+      <h2 class="sec-title" data-i18n="bio_title">Anahí Picerno</h2>
+      <p class="bio-loc">
+        <span aria-hidden="true">✦</span>
+        <span data-i18n="bio_loc">Numeróloga · Trancoso, Bahia</span>
+      </p>
+    </div>
+    <div class="bio-text" id="bio-text"></div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -519,12 +565,20 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
    Ex.: Brasil (91) 99999-9999 → "5591999999999"
         Argentina 11 5555-5555 → "5491155555555"
 ═════════════════════════════════════════════════════════════ */
-const WHATSAPP = "5500000000000"; // ← TROCAR PELO NÚMERO REAL
+const WHATSAPP = "5571984911898"; // WhatsApp da Anahí
+const EMAIL = "anipicerno@gmail.com"; // e-mail de contato da numeróloga
+
+/* Sempre abrir o site no TOPO, mesmo que a URL tenha âncora (#pacotes etc.) */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+window.addEventListener('load', () => window.scrollTo(0, 0));
 
 /* ───────────────── i18n ───────────────── */
 const I18N = {
 pt:{
- nav_about:"A Numerologia", nav_calc:"Cálculo grátis", nav_plans:"Cartas", nav_how:"Como funciona",
+ nav_about:"A Numerologia", nav_bio:"Sobre Anahí", nav_calc:"Cálculo grátis", nav_plans:"Cartas", nav_how:"Como funciona",
  hero_luz:"e Luz",
  hero_sub:"Seu nome e sua data de nascimento guardam um mapa. A <strong>Numerologia Pitagórica</strong> traduz esses números em autoconhecimento, clareza e propósito.",
  hero_cta1:"Calcule grátis seus números", hero_cta2:"Conheça as cartas",
@@ -538,6 +592,15 @@ pt:{
  calc_name_label:"Nome completo de registro", calc_name_ph:"Ex.: Maria da Silva Santos",
  calc_name_hint:"Use o nome que está na sua certidão de nascimento.",
  calc_date_label:"Data de nascimento", calc_btn:"✦ Revelar meus números",
+ calc_date_hint:"Dia, mês e ano — ex.: 15 / 05 / 1985.",
+ aria_day:"Dia", aria_month:"Mês", aria_year:"Ano",
+ bio_eyebrow:"Sobre", bio_title:"Anahí Picerno", bio_loc:"Numeróloga · Trancoso, Bahia",
+ bio:["Meu caminho para a Numerologia não aconteceu por acaso; foi uma resposta a algo que sempre existiu dentro de mim.",
+ "Há quatro anos iniciei minha formação com uma numeróloga na Argentina. Naquela época eu buscava ferramentas para compreender melhor meu propósito de vida, mas logo percebi que a Numerologia era muito mais do que o estudo dos números: era uma linguagem que fazia sentido para mim de forma natural, uma maneira de compreender a energia e os ciclos das pessoas.",
+ "Durante minha formação, descobri que possuía uma sensibilidade especial para essa área. O que para muitos é uma técnica, para mim tornou-se uma vocação e uma missão de vida. A cada mapa numerológico realizado, sentia a confirmação de que esse conhecimento havia chegado até mim por um motivo maior.",
+ "Com o passar do tempo, a própria Numerologia começou a me mostrar novos caminhos. Por meio dos estudos, das sincronicidades e dos sinais que fui recebendo, compreendi que o Brasil era o melhor lugar para desenvolver e compartilhar esse dom. Foi assim que cheguei a Trancoso, um lugar cuja energia, natureza e espiritualidade tocaram profundamente meu coração.",
+ "Hoje vivo aqui porque sinto que este destino faz parte da minha trajetória. Trancoso me permite trabalhar de forma autêntica, ajudando pessoas a conhecerem melhor a si mesmas, descobrirem seus talentos e compreenderem os ciclos que estão vivendo.",
+ "A Numerologia transformou a minha vida, e meu propósito é compartilhar essa ferramenta para que outras pessoas também encontrem clareza, direção e confiança em seus próprios caminhos."],
  r_destiny:"Número de Destino", r_expression:"Número de Expressão",
  r_destiny_h:"Seu Destino", r_expression_h:"Sua Expressão", r_karmic_h:"Lições Kármicas",
  r_mision:"Missão", r_gifts:"Dons", r_challenges:"Desafios", r_leccion:"Lição kármica",
@@ -571,10 +634,13 @@ pt:{
  wa_general:"Olá! Visitei o site Numerologia e Luz e quero saber mais sobre as cartas numerológicas. ✨",
  wa_plan:"Olá! Quero solicitar a Carta {plan}. Meu nome completo é ____ e nasci em __/__/____. ✨",
  wa_result:"Olá! Calculei meus números no site (Destino {d}, Expressão {e}) e quero minha Carta Numerológica completa. ✨",
+ email_plan_label:"Solicitar por e-mail", email_result_label:"Pedir por e-mail",
+ email_subj_plan:"Carta {plan} — Numerologia e Luz",
+ email_subj_result:"Minha Carta Numerológica — Numerologia e Luz",
  prices:{essencial:"R$ 147",completa:"R$ 297",premium:"R$ 497"}
 },
 es:{
- nav_about:"La Numerología", nav_calc:"Cálculo gratis", nav_plans:"Cartas", nav_how:"Cómo funciona",
+ nav_about:"La Numerología", nav_bio:"Sobre Anahí", nav_calc:"Cálculo gratis", nav_plans:"Cartas", nav_how:"Cómo funciona",
  hero_luz:"y Luz",
  hero_sub:"Tu nombre y tu fecha de nacimiento guardan un mapa. La <strong>Numerología Pitagórica</strong> traduce esos números en autoconocimiento, claridad y propósito.",
  hero_cta1:"Calculá gratis tus números", hero_cta2:"Conocé las cartas",
@@ -588,6 +654,15 @@ es:{
  calc_name_label:"Nombre completo de registro", calc_name_ph:"Ej.: María Fernández García",
  calc_name_hint:"Usá el nombre que figura en tu partida de nacimiento.",
  calc_date_label:"Fecha de nacimiento", calc_btn:"✦ Revelar mis números",
+ calc_date_hint:"Día, mes y año — ej.: 15 / 05 / 1985.",
+ aria_day:"Día", aria_month:"Mes", aria_year:"Año",
+ bio_eyebrow:"Sobre", bio_title:"Anahí Picerno", bio_loc:"Numeróloga · Trancoso, Bahía",
+ bio:["Mi camino hacia la numerología no fue una casualidad, sino una respuesta a algo que siempre estuvo dentro de mí.",
+ "Hace cuatro años comencé mi formación con una numeróloga en Argentina. Aunque en ese momento estaba buscando herramientas para comprender mejor mi propósito de vida, muy pronto descubrí que la numerología era mucho más que un estudio de números: era un lenguaje que me resultaba familiar, una forma natural de interpretar la energía y los ciclos de las personas.",
+ "Durante mi aprendizaje entendí que tenía una sensibilidad especial para esta disciplina. Lo que para otros era una técnica, para mí se convirtió en una vocación y en una misión de servicio. Cada carta numerológica que realizaba confirmaba que este conocimiento había llegado a mi vida por una razón.",
+ "Con el tiempo, la propia numerología comenzó a mostrarme nuevos caminos. A través de mis estudios, de las sincronías y de las señales que fui encontrando, comprendí que Brasil era el lugar ideal para desarrollar este don. Fue así como llegué a Trancoso, un lugar cuya energía, naturaleza y conexión espiritual resonaron profundamente conmigo.",
+ "Hoy vivo aquí porque siento que este destino forma parte de mi camino. Trancoso me permite trabajar desde la autenticidad, acompañando a personas que buscan conocerse mejor, descubrir sus talentos y comprender los ciclos que atraviesan.",
+ "La numerología transformó mi vida, y mi propósito es compartir esta herramienta para que otras personas también puedan encontrar claridad, dirección y confianza en su propio camino."],
  r_destiny:"Número de Destino", r_expression:"Número de Expresión",
  r_destiny_h:"Tu Destino", r_expression_h:"Tu Expresión", r_karmic_h:"Lecciones Kármicas",
  r_mision:"Misión", r_gifts:"Dones", r_challenges:"Desafíos", r_leccion:"Lección kármica",
@@ -621,7 +696,10 @@ es:{
  wa_general:"¡Hola! Visité el sitio Numerología y Luz y quiero saber más sobre las cartas numerológicas. ✨",
  wa_plan:"¡Hola! Quiero solicitar la Carta {plan}. Mi nombre completo es ____ y nací el __/__/____. ✨",
  wa_result:"¡Hola! Calculé mis números en el sitio (Destino {d}, Expresión {e}) y quiero mi Carta Numerológica completa. ✨",
- prices:{essencial:"Consultar",completa:"AR$ 83.000",premium:"AR$ 139.000"},
+ email_plan_label:"Solicitar por mail", email_result_label:"Pedir por mail",
+ email_subj_plan:"Carta {plan} — Numerología y Luz",
+ email_subj_result:"Mi Carta Numerológica — Numerología y Luz",
+ prices:{essencial:"AR$ 41.000",completa:"AR$ 83.000",premium:"AR$ 139.000"},
  plan_names:{"Essencial":"Esencial","Completa":"Completa","Premium + Sessão":"Premium + Sesión"}
 }
 };
@@ -710,9 +788,19 @@ function setLang(l){
     const k = el.getAttribute('data-i18n-ph');
     if(t[k]) el.placeholder = t[k];
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-aria');
+    if(t[k]) el.setAttribute('aria-label', t[k]);
+  });
   document.querySelectorAll('[data-price]').forEach(el=>{
     el.textContent = t.prices[el.getAttribute('data-price')];
   });
+  // Biografia (parágrafos)
+  const bioBox = document.getElementById('bio-text');
+  if(bioBox && t.bio){
+    bioBox.innerHTML = '';
+    t.bio.forEach(par=>{ const p=document.createElement('p'); p.textContent=par; bioBox.appendChild(p); });
+  }
   updateWaLinks();
   if(lastResult) renderResult(lastResult);
 }
@@ -720,20 +808,56 @@ function setLang(l){
 function waUrl(msg){
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 }
+function emailUrl(subject, body){
+  return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/* Cria um botão de e-mail ao lado de cada botão de WhatsApp (uma única vez) */
+function injectEmailButtons(){
+  document.querySelectorAll('.wa-plan').forEach(wa=>{
+    const em = document.createElement('a');
+    em.className = 'btn btn-email email-plan';
+    em.setAttribute('data-plan', wa.getAttribute('data-plan'));
+    wa.insertAdjacentElement('afterend', em);
+  });
+  const waR = document.getElementById('wa-result');
+  if(waR && !document.getElementById('email-result')){
+    const em = document.createElement('a');
+    em.className = 'btn btn-line btn-email';
+    em.id = 'email-result';
+    waR.insertAdjacentElement('afterend', em);
+  }
+}
+
 function updateWaLinks(){
   const t = I18N[lang];
   document.getElementById('wa-float').href = waUrl(t.wa_general);
+
+  // Cartas: WhatsApp + e-mail
   document.querySelectorAll('.wa-plan').forEach(a=>{
     let plan = a.getAttribute('data-plan');
     if(lang==='es' && t.plan_names) plan = t.plan_names[plan] || plan;
     a.href = waUrl(t.wa_plan.replace('{plan}', plan));
   });
+  document.querySelectorAll('.email-plan').forEach(a=>{
+    let plan = a.getAttribute('data-plan');
+    if(lang==='es' && t.plan_names) plan = t.plan_names[plan] || plan;
+    a.href = emailUrl(t.email_subj_plan.replace('{plan}', plan), t.wa_plan.replace('{plan}', plan));
+    a.textContent = t.email_plan_label;
+  });
+
+  // Resultado da calculadora: WhatsApp + e-mail
   const r = document.getElementById('wa-result');
+  const re = document.getElementById('email-result');
   if(lastResult){
-    r.href = waUrl(t.wa_result.replace('{d}', lastResult.destino).replace('{e}', lastResult.expressao));
+    const waMsg = t.wa_result.replace('{d}', lastResult.destino).replace('{e}', lastResult.expressao);
+    r.href = waUrl(waMsg);
+    if(re){ re.href = emailUrl(t.email_subj_result, waMsg); }
   } else {
     r.href = waUrl(t.wa_general);
+    if(re){ re.href = emailUrl(t.email_subj_result, t.wa_general); }
   }
+  if(re){ re.textContent = t.email_result_label; }
 }
 
 /* ───────────────── numerologia pitagórica ───────────────── */
@@ -768,17 +892,48 @@ function karmicLessons(name){
 function calcular(){
   const t = I18N[lang];
   const nome = document.getElementById('nome').value.trim();
-  const data = document.getElementById('data').value;
+  const dia = parseInt(document.getElementById('dia').value, 10);
+  const mes = parseInt(document.getElementById('mes').value, 10);
+  const ano = parseInt(document.getElementById('ano').value, 10);
+  const anoAtual = new Date().getFullYear();
   if(!nome || normalize(nome).length < 2){ alert(t.err_name); return; }
-  if(!data){ alert(t.err_date); return; }
+  // valida a data
+  if(!dia || !mes || !ano || dia<1 || dia>31 || mes<1 || mes>12 || ano<1900 || ano>anoAtual){
+    alert(t.err_date); return;
+  }
+  const dt = new Date(ano, mes-1, dia);
+  if(dt.getDate()!==dia || dt.getMonth()!==mes-1 || dt.getFullYear()!==ano){
+    alert(t.err_date); return; // ex.: 31/02 não existe
+  }
+  const iso = ano + '-' + String(mes).padStart(2,'0') + '-' + String(dia).padStart(2,'0');
   lastResult = {
-    destino: destinyFromDate(data),
+    destino: destinyFromDate(iso),
     expressao: expressionFromName(nome),
     karmic: karmicLessons(nome)
   };
   renderResult(lastResult);
-  document.getElementById('resultado').classList.add('show');
-  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'start'});
+  const res = document.getElementById('resultado');
+  res.classList.add('show');
+  // Rolagem confiável (inclui iPhone/Safari): calcula a posição e desce até o topo
+  // do resultado, com folga para o cabeçalho fixo não cobrir os números.
+  requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      const headerH = (document.querySelector('header')||{}).offsetHeight || 64;
+      const y = res.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }, 80);
+  });
+}
+
+/* Avanço automático entre os campos de data (só números) */
+function setupDateInputs(){
+  const dia = document.getElementById('dia');
+  const mes = document.getElementById('mes');
+  const ano = document.getElementById('ano');
+  const onlyDigits = el => el.value = el.value.replace(/\D/g,'');
+  [dia,mes,ano].forEach(el=>el && el.addEventListener('input', ()=>onlyDigits(el)));
+  if(dia) dia.addEventListener('input', ()=>{ if(dia.value.length===2) mes.focus(); });
+  if(mes) mes.addEventListener('input', ()=>{ if(mes.value.length===2) ano.focus(); });
 }
 
 function renderResult(r){
@@ -820,7 +975,9 @@ function renderResult(r){
   updateWaLinks();
 }
 
-updateWaLinks();
+injectEmailButtons();
+setupDateInputs();
+setLang('pt');   // renderiza textos, biografia e aria-labels iniciais
 </script>
 </body>
 </html>
