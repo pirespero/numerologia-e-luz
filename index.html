@@ -301,9 +301,10 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
       <a href="#voucher" data-i18n="nav_voucher">Presente</a>
       <a href="#como" data-i18n="nav_how">Como funciona</a>
     </nav>
-    <div class="lang-toggle" role="group" aria-label="Idioma / Idioma">
+    <div class="lang-toggle" role="group" aria-label="Idioma / Idioma / Language">
       <button id="btn-pt" class="active" onclick="setLang('pt')" aria-label="Português (Brasil)"><span class="flag" aria-hidden="true">🇧🇷</span>PT</button>
       <button id="btn-es" onclick="setLang('es')" aria-label="Español (Argentina)"><span class="flag" aria-hidden="true">🇦🇷</span>ES</button>
+      <button id="btn-en" onclick="setLang('en')" aria-label="English"><span class="flag" aria-hidden="true">🇺🇸</span>EN</button>
     </div>
   </div>
 </header>
@@ -601,16 +602,9 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
 </a>
 
 <script>
-/* ════════════════════════════════════════════════════════════
-   CONFIGURAÇÃO — edite aqui ✏️
-   Número do WhatsApp com código do país, só dígitos.
-   Ex.: Brasil (91) 99999-9999 → "5591999999999"
-        Argentina 11 5555-5555 → "5491155555555"
-═════════════════════════════════════════════════════════════ */
-const WHATSAPP = "5571984911898"; // WhatsApp da Anahí
-const EMAIL = "anipicerno@gmail.com"; // e-mail de contato da numeróloga
+const WHATSAPP = "5571984911898";
+const EMAIL = "anipicerno@gmail.com";
 
-/* Sempre abrir o site no TOPO, mesmo que a URL tenha âncora (#pacotes etc.) */
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 if (window.location.hash) {
   history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -759,12 +753,82 @@ es:{
  email_subj_result:"Mi Carta Numerológica — Numerología y Luz",
  prices:{essencial:"AR$ 41.000",completa:"AR$ 83.000",premium:"AR$ 139.000"},
  plan_names:{"Essencial":"Esencial","Completa":"Completa","Premium + Sessão":"Premium + Sesión"}
+},
+en:{
+ nav_about:"Numerology", nav_bio:"About Anahí", nav_calc:"Free reading", nav_plans:"Charts", nav_voucher:"Gift", nav_how:"How it works",
+ hero_luz:"& Light",
+ hero_sub:"Your name and date of birth hold a map. <strong>Pythagorean Numerology</strong> translates these numbers into self-knowledge, clarity and purpose.",
+ hero_cta1:"Calculate your numbers free", hero_cta2:"Explore the charts",
+ about_eyebrow:"What it is", about_title:"The language of numbers",
+ about_intro:"Numerology is an ancient study, systematized by the Greek philosopher Pythagoras, built on a simple idea: everything in the universe vibrates — and each vibration can be expressed as a number. By translating your full name and date of birth into numbers, it reveals patterns of your essence, your talents and the cycles you move through.",
+ p1_title:"Pythagorean origin", p1_text:"In the method of Pythagoras, each letter of the alphabet corresponds to a number from 1 to 9. It is the most widespread school of numerology in the West — the same one we use in all of our readings.",
+ p2_title:"Name + date of birth", p2_text:"Your full birth name reveals how you express yourself in the world. Your date of birth reveals your path of destiny and the lessons your soul came to learn.",
+ p3_title:"Practical self-knowledge", p3_text:"More than predicting, Numerology guides: it helps you make decisions aligned with your essence — in your career, your relationships and your moments of change.",
+ calc_eyebrow:"Free for you", calc_title:"Discover your numbers now",
+ calc_intro:"A first encounter with your map: calculate your Destiny Number, your Expression Number and your Karmic Lessons for free.",
+ calc_name_label:"Full birth name", calc_name_ph:"E.g.: Mary Anne Johnson",
+ calc_name_hint:"Use the name that appears on your birth certificate.",
+ calc_date_label:"Date of birth", calc_btn:"✦ Reveal my numbers",
+ calc_date_hint:"Day, month and year — e.g.: 15 / 05 / 1985.",
+ aria_day:"Day", aria_month:"Month", aria_year:"Year",
+ bio_eyebrow:"About", bio_title:"Anahí Picerno", bio_loc:"Numerologist · Trancoso, Brazil",
+ bio:["My path to Numerology did not happen by chance; it was a response to something that had always lived within me.",
+ "Four years ago I began my training with a numerologist in Argentina. At the time I was looking for tools to better understand my life purpose, but I soon realized that Numerology was much more than the study of numbers: it was a language that made sense to me naturally, a way of understanding the energy and the cycles of people.",
+ "During my training, I discovered that I had a special sensitivity for this field. What for many is a technique became, for me, a vocation and a life mission. With each numerology chart I created, I felt the confirmation that this knowledge had come to me for a greater reason.",
+ "Over time, Numerology itself began to show me new paths. Through my studies, the synchronicities and the signs I kept receiving, I understood that Brazil was the best place to develop and share this gift. That is how I came to Trancoso, a place whose energy, nature and spirituality deeply touched my heart.",
+ "Today I live here because I feel that this destiny is part of my journey. Trancoso allows me to work authentically, helping people to know themselves better, discover their talents and understand the cycles they are living through.",
+ "Numerology transformed my life, and my purpose is to share this tool so that other people can also find clarity, direction and confidence on their own paths."],
+ r_destiny:"Destiny Number", r_expression:"Expression Number",
+ r_destiny_h:"Your Destiny", r_expression_h:"Your Expression", r_karmic_h:"Karmic Lessons",
+ r_mision:"Mission", r_gifts:"Gifts", r_challenges:"Challenges", r_leccion:"Karmic lesson",
+ r_cta_text:"This is only the surface. Your complete Numerology Chart interprets all of your numbers, cycles and potentials — created personally for you.",
+ r_cta_btn:"I want my complete chart",
+ calc_note:"✦ Calculated with the Pythagorean method. Your data is not stored — everything happens right here, in your browser.",
+ plans_eyebrow:"Numerology charts", plans_title:"Choose the depth of your journey",
+ plans_intro:"Each chart is created personally, number by number, and delivered as a PDF. No automated reports.",
+ pl_invest:"Investment", pl_cta:"Request via WhatsApp",
+ pl1_tag:"First step", pl1_name:"Essential Chart",
+ pl1_i1:"Destiny Number", pl1_i2:"Soul Number", pl1_i3:"Personality Number",
+ pl1_i4:"Expression Number", pl1_i5:"Life Mission", pl1_i6:"Natural talents and potential",
+ pl1_i7:"Challenges and lessons", pl1_i8:"Current personal cycle", pl1_i9:"Detailed interpretation as PDF",
+ pl2_ribbon:"Most chosen", pl2_tag:"Essence and life cycles", pl2_name:"Complete Chart",
+ pl2_i1:"Everything in the Essential Chart", pl2_i2:"Hidden gifts and talents", pl2_i3:"Karmic lessons and debts",
+ pl2_i4:"Life challenges", pl2_i5:"Pinnacles and evolutionary cycles", pl2_i6:"Current personal year",
+ pl2_i7:"Career and prosperity", pl2_i8:"Relationships and compatibility", pl2_i9:"Complete report as PDF",
+ pl3_tag:"Complete experience", pl3_name:"Premium + Session",
+ pl3_i1:"Everything in the Complete Chart", pl3_i2:"Professional and financial analysis", pl3_i3:"Personalized cycles and forecasts",
+ pl3_i4:"Personal development guide", pl3_i5:"Live online session (audio or video)",
+ pl3_i6:"Answers to your main questions", pl3_i7:"Clarity for decisions and next steps", pl3_i8:"Exclusive report as PDF",
+ how_eyebrow:"How it works", how_title:"From your message to your chart",
+ vch_eyebrow:"Gift", vch_title:"Give a journey of self-knowledge",
+ vch_intro:"The gift for someone you love to discover themselves. A voucher for a numerology reading — the recipient chooses the chart and discovers their essence, their talents and their path.",
+ vch_i1:"Valid for any of the charts",
+ vch_i2:"Sent as digital art, ready to gift",
+ vch_i3:"Perfect for birthdays, Mother's Day and special dates",
+ vch_cta:"Buy here", vch_cta_email:"Gift by email",
+ vch_subj:"I want to give a Voucher — Numerologia e Luz",
+ wa_voucher:"Hi! I'd like to give someone a Numerology Voucher as a gift. Could you help me choose the chart? ✨",
+ s1_title:"You get in touch", s1_text:"Through WhatsApp, you choose your chart and send your full birth name and your date of birth.",
+ s2_title:"The reading is done by hand", s2_text:"Each number of your map is calculated and interpreted personally, with the care that a unique map deserves.",
+ s3_title:"You receive it and we talk", s3_text:"Your chart arrives as a PDF to revisit whenever you wish. In the Premium plan, a live session explores every detail.",
+ f_v1:"Self-knowledge", f_v2:"Clarity", f_v3:"Purpose",
+ f_note:"© 2026 Numerologia e Luz · Numerology is a tool for self-knowledge and does not replace medical, psychological, legal or financial guidance.",
+ err_name:"Enter your full name (letters only).", err_date:"Enter your date of birth.",
+ karmic_none:"Your name contains all the vibrations from 1 to 9 — there are no karmic lessons pending through your name. A sign of rare balance.",
+ karmic_some:"The numbers missing from your name point to energies your soul came to develop in this life:",
+ wa_general:"Hi! I visited the Numerologia e Luz website and I'd like to know more about the numerology charts. ✨",
+ wa_plan:"Hi! I'd like to request the {plan} Chart. My full name is ____ and I was born on __/__/____. ✨",
+ wa_result:"Hi! I calculated my numbers on the website (Destiny {d}, Expression {e}) and I'd like my complete Numerology Chart. ✨",
+ email_plan_label:"Request by email", email_result_label:"Request by email",
+ email_subj_plan:"{plan} Chart — Numerologia e Luz",
+ email_subj_result:"My Numerology Chart — Numerologia e Luz",
+ prices:{essencial:"R$ 147",completa:"R$ 297",premium:"R$ 497"},
+ plan_names:{"Essencial":"Essential","Completa":"Complete","Premium + Sessão":"Premium + Session"}
 }
 };
 
 /* ════════════════════════════════════════════════════════════
    INTERPRETAÇÕES DO KARMA DESTINO (conteúdo grátis)
-   m = missão · d = dons · x = desafios · l = lição kármica · c = palavra-chave
 ═════════════════════════════════════════════════════════════ */
 const DEST = {
 pt:{
@@ -792,10 +856,23 @@ es:{
  9:{m:"servir a la humanidad.",d:["Compasión","Generosidad","Idealismo"],x:["Desilusión","Exceso de entrega","Dificultad para cerrar ciclos"],l:"Aprender el desapego y el perdón.",c:"Humanidad"},
  11:{m:"inspirar y elevar la conciencia.",d:["Intuición extraordinaria","Sensibilidad espiritual","Capacidad de inspirar"],x:["Nerviosismo","Ansiedad","Hipersensibilidad"],l:"Transformar la inspiración en acción concreta.",c:"Inspiración · canal espiritual"},
  22:{m:"materializar grandes proyectos para el bien colectivo.",d:["Liderazgo excepcional","Visión práctica","Construcción a gran escala"],x:["Presión excesiva","Miedo al fracaso","Autoexigencia"],l:"Convertir los sueños en realidades duraderas.",c:"Gran Constructor"}
+},
+en:{
+ 1:{m:"to learn leadership and independence.",d:["Initiative","Creativity","A gift for starting things"],x:["Ego","Impatience","Excessive individualism"],l:"To learn to lead without imposing.",c:"Leadership"},
+ 2:{m:"to develop cooperation and diplomacy.",d:["Sensitivity","Empathy","A gift for mediating"],x:["Emotional dependence","Insecurity","Fear of conflict"],l:"To trust yourself and keep emotional balance.",c:"Cooperation"},
+ 3:{m:"to express yourself and communicate.",d:["Creativity","Joy","Artistic talent"],x:["Scattered focus","Superficiality","Excessive optimism"],l:"To communicate with authenticity and responsibility.",c:"Expression"},
+ 4:{m:"to build solid foundations.",d:["Organization","Discipline","Perseverance"],x:["Rigidity","Excessive control","Fear of change"],l:"To learn to combine structure with flexibility.",c:"Building"},
+ 5:{m:"to experience freedom and transformation.",d:["Adaptability","Charisma","Adventurous spirit"],x:["Inconstancy","Impulsiveness","Excess"],l:"To use freedom with responsibility.",c:"Freedom"},
+ 6:{m:"to serve and care.",d:["Love","Responsibility","Sense of family"],x:["Perfectionism","Excessive sacrifice","Emotional control"],l:"To learn to care without overprotecting.",c:"Service"},
+ 7:{m:"to seek knowledge and wisdom.",d:["Intuition","Spirituality","Analytical ability"],x:["Isolation","Distrust","Excessive rationality"],l:"To trust your intuition and open up to the world.",c:"Wisdom"},
+ 8:{m:"to learn the right use of power and money.",d:["Leadership","Ambition","Management ability"],x:["Materialism","Authoritarianism","Obsession with success"],l:"To use power to benefit others.",c:"Power"},
+ 9:{m:"to serve humanity.",d:["Compassion","Generosity","Idealism"],x:["Disillusionment","Over-giving","Difficulty closing cycles"],l:"To learn detachment and forgiveness.",c:"Humanity"},
+ 11:{m:"to inspire and raise consciousness.",d:["Extraordinary intuition","Spiritual sensitivity","A gift for inspiring"],x:["Nervousness","Anxiety","Hypersensitivity"],l:"To turn inspiration into concrete action.",c:"Inspiration · spiritual channel"},
+ 22:{m:"to bring great projects to life for the collective good.",d:["Exceptional leadership","Practical vision","Building on a large scale"],x:["Excessive pressure","Fear of failure","Self-demand"],l:"To turn dreams into lasting realities.",c:"Master Builder"}
 }
 };
 
-/* Linha concisa do Número de Expressão (talento/forma de se expressar) */
+/* Linha concisa do Número de Expressão */
 const EXPR = {
 pt:{
  1:"Você se expressa com liderança e originalidade — abre caminhos com a própria voz.",
@@ -822,17 +899,39 @@ es:{
  9:"Te expresás con generosidad y amplitud — tu palabra acoge a todos.",
  11:"Te expresás como inspiración para los demás — una sensibilidad que ilumina.",
  22:"Te expresás como realizador de grandes ideas — visión que se vuelve obra concreta."
+},
+en:{
+ 1:"You express yourself with leadership and originality — you open paths with your own voice.",
+ 2:"You express yourself with sensitivity and tact — your strength lies in uniting and harmonizing.",
+ 3:"You express yourself with creativity and words — you communicate, delight and inspire.",
+ 4:"You express yourself with method and reliability — your word builds what lasts.",
+ 5:"You express yourself with versatility and movement — you convey freedom and change.",
+ 6:"You express yourself with care and responsibility — you welcome and harmonize your surroundings.",
+ 7:"You express yourself with depth and analysis — you seek meaning before words.",
+ 8:"You express yourself with authority and focus — your presence organizes and achieves.",
+ 9:"You express yourself with generosity and breadth — your word welcomes everyone.",
+ 11:"You express yourself as an inspiration to others — a sensitivity that lights the way.",
+ 22:"You express yourself as a builder of great ideas — vision that becomes concrete work."
 }
 };
 
 let lang = 'pt';
 let lastResult = null;
 
+/* Detecta o idioma do navegador: en → inglês, es → espanhol, senão português */
+function detectLang(){
+  const nav = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+  if(nav.startsWith('en')) return 'en';
+  if(nav.startsWith('es')) return 'es';
+  return 'pt';
+}
+
 function setLang(l){
   lang = l;
-  document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'es-AR';
+  document.documentElement.lang = l === 'pt' ? 'pt-BR' : (l === 'es' ? 'es-AR' : 'en');
   document.getElementById('btn-pt').classList.toggle('active', l==='pt');
   document.getElementById('btn-es').classList.toggle('active', l==='es');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
   const t = I18N[l];
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
@@ -870,7 +969,6 @@ function emailUrl(subject, body){
   return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-/* Cria um botão de e-mail ao lado de cada botão de WhatsApp (uma única vez) */
 function injectEmailButtons(){
   document.querySelectorAll('.wa-plan').forEach(wa=>{
     const em = document.createElement('a');
@@ -891,20 +989,18 @@ function updateWaLinks(){
   const t = I18N[lang];
   document.getElementById('wa-float').href = waUrl(t.wa_general);
 
-  // Cartas: WhatsApp + e-mail
   document.querySelectorAll('.wa-plan').forEach(a=>{
     let plan = a.getAttribute('data-plan');
-    if(lang==='es' && t.plan_names) plan = t.plan_names[plan] || plan;
+    if(t.plan_names) plan = t.plan_names[plan] || plan;
     a.href = waUrl(t.wa_plan.replace('{plan}', plan));
   });
   document.querySelectorAll('.email-plan').forEach(a=>{
     let plan = a.getAttribute('data-plan');
-    if(lang==='es' && t.plan_names) plan = t.plan_names[plan] || plan;
+    if(t.plan_names) plan = t.plan_names[plan] || plan;
     a.href = emailUrl(t.email_subj_plan.replace('{plan}', plan), t.wa_plan.replace('{plan}', plan));
     a.textContent = t.email_plan_label;
   });
 
-  // Resultado da calculadora: WhatsApp + e-mail
   const r = document.getElementById('wa-result');
   const re = document.getElementById('email-result');
   if(lastResult){
@@ -917,7 +1013,6 @@ function updateWaLinks(){
   }
   if(re){ re.textContent = t.email_result_label; }
 
-  // Voucher / presente
   const wv = document.querySelector('.wa-voucher');
   if(wv){ wv.href = waUrl(t.wa_voucher); }
 }
@@ -927,7 +1022,7 @@ const PYTH = {a:1,j:1,s:1,b:2,k:2,t:2,c:3,l:3,u:3,d:4,m:4,v:4,e:5,n:5,w:5,f:6,o:
 
 function normalize(name){
   return name.toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // remove acentos (ç→c, ñ→n, á→a…)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
     .replace(/[^a-z]/g,'');
 }
 function reduce(n){
@@ -936,7 +1031,7 @@ function reduce(n){
   }
   return n;
 }
-function destinyFromDate(iso){ // iso = "YYYY-MM-DD"
+function destinyFromDate(iso){
   const digits = iso.replace(/\D/g,'').split('').map(Number);
   return reduce(digits.reduce((s,d)=>s+d,0));
 }
@@ -959,13 +1054,12 @@ function calcular(){
   const ano = parseInt(document.getElementById('ano').value, 10);
   const anoAtual = new Date().getFullYear();
   if(!nome || normalize(nome).length < 2){ alert(t.err_name); return; }
-  // valida a data
   if(!dia || !mes || !ano || dia<1 || dia>31 || mes<1 || mes>12 || ano<1900 || ano>anoAtual){
     alert(t.err_date); return;
   }
   const dt = new Date(ano, mes-1, dia);
   if(dt.getDate()!==dia || dt.getMonth()!==mes-1 || dt.getFullYear()!==ano){
-    alert(t.err_date); return; // ex.: 31/02 não existe
+    alert(t.err_date); return;
   }
   const iso = ano + '-' + String(mes).padStart(2,'0') + '-' + String(dia).padStart(2,'0');
   lastResult = {
@@ -976,8 +1070,6 @@ function calcular(){
   renderResult(lastResult);
   const res = document.getElementById('resultado');
   res.classList.add('show');
-  // Rolagem confiável (inclui iPhone/Safari): calcula a posição e desce até o topo
-  // do resultado, com folga para o cabeçalho fixo não cobrir os números.
   requestAnimationFrame(()=>{
     setTimeout(()=>{
       const headerH = (document.querySelector('header')||{}).offsetHeight || 64;
@@ -987,7 +1079,6 @@ function calcular(){
   });
 }
 
-/* Avanço automático entre os campos de data (só números) */
 function setupDateInputs(){
   const dia = document.getElementById('dia');
   const mes = document.getElementById('mes');
@@ -1005,7 +1096,6 @@ function renderResult(r){
   document.getElementById('num-destino').textContent = r.destino;
   document.getElementById('num-expressao').textContent = r.expressao;
 
-  // Card do Destino
   document.getElementById('clave-destino').textContent = dest ? dest.c : '';
   document.getElementById('clave-expressao').textContent = (DEST[lang][r.expressao]||{}).c || '';
   document.getElementById('dest-mision').textContent = dest ? dest.m : '';
@@ -1018,10 +1108,8 @@ function renderResult(r){
     dest.x.forEach(v=>{ const li=document.createElement('li'); li.textContent=v; ulX.appendChild(li); });
   }
 
-  // Expressão (linha concisa)
   document.getElementById('interp-expressao').textContent = expr || '';
 
-  // Lições kármicas
   const chips = document.getElementById('karmic-chips');
   chips.innerHTML = '';
   if(r.karmic.length === 0){
@@ -1039,7 +1127,7 @@ function renderResult(r){
 
 injectEmailButtons();
 setupDateInputs();
-setLang('pt');   // renderiza textos, biografia e aria-labels iniciais
+setLang(detectLang());   // detecta idioma do navegador (en/es/pt) e renderiza tudo
 </script>
 </body>
 </html>
