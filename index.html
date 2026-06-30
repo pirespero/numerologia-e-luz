@@ -257,6 +257,9 @@ section{padding:76px 0}
 .bio-wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
 @media(max-width:760px){.bio-wrap{grid-template-columns:1fr;gap:24px}}
 .bio-aside .sec-title{margin-bottom:10px}
+.bio-photo{margin-bottom:22px}
+.bio-photo img{width:100%;max-width:280px;height:auto;border-radius:14px;box-shadow:0 16px 40px rgba(58,42,93,.18);display:block}
+@media(max-width:760px){.bio-photo{max-width:220px;margin-left:auto;margin-right:auto}.bio-photo img{max-width:220px}}
 .bio-loc{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:.9rem;letter-spacing:.04em}
 .bio-text p{margin-bottom:16px;font-weight:300}
 .bio-text p:first-child{font-size:1.12rem;color:var(--purple)}
@@ -565,6 +568,9 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
 <section id="numerologa">
   <div class="wrap bio-wrap">
     <div class="bio-aside">
+      <div class="bio-photo">
+        <img src="assets/anahi.jpg" alt="Anahí Picerno, numeróloga" loading="lazy">
+      </div>
       <span class="eyebrow" data-i18n="bio_eyebrow">Sobre</span>
       <h2 class="sec-title" data-i18n="bio_title">Anahí Picerno</h2>
       <p class="bio-loc">
