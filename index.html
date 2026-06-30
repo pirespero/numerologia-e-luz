@@ -239,6 +239,19 @@ section{padding:76px 0}
 .step h3{font-size:1.3rem;margin-bottom:6px}
 .step p{font-size:.93rem;font-weight:300}
 
+/* ───── voucher / presente ───── */
+#voucher{background:var(--ivory-2)}
+.voucher-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:820px){.voucher-wrap{grid-template-columns:1fr;gap:30px}}
+.voucher-art img{width:100%;height:auto;border-radius:16px;box-shadow:0 18px 50px rgba(58,42,93,.14);display:block}
+.voucher-text .sec-intro{margin-bottom:22px}
+.voucher-list{list-style:none;margin-bottom:28px}
+.voucher-list li{position:relative;padding:9px 0 9px 26px;font-weight:300;border-bottom:1px solid rgba(182,137,58,.16)}
+.voucher-list li:last-child{border-bottom:none}
+.voucher-list li::before{content:"✦";position:absolute;left:0;top:11px;color:var(--gold);font-size:.8rem}
+.cta-pair{display:flex;flex-direction:column;gap:10px;max-width:340px}
+.voucher-cta .btn{justify-content:center}
+
 /* ───── sobre a numeróloga ───── */
 #numerologa{background:linear-gradient(180deg,var(--ivory) 0%,var(--lavender-soft) 100%)}
 .bio-wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
@@ -285,6 +298,7 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
       <a href="#numerologa" data-i18n="nav_bio">Sobre Anahí</a>
       <a href="#calculadora" data-i18n="nav_calc">Cálculo grátis</a>
       <a href="#pacotes" data-i18n="nav_plans">Cartas</a>
+      <a href="#voucher" data-i18n="nav_voucher">Presente</a>
       <a href="#como" data-i18n="nav_how">Como funciona</a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Idioma / Idioma">
@@ -506,6 +520,28 @@ footer small{display:block;opacity:.55;font-size:.78rem;margin-top:14px;font-wei
   </div>
 </section>
 
+<!-- VOUCHER / PRESENTE -->
+<section id="voucher">
+  <div class="wrap voucher-wrap">
+    <div class="voucher-art">
+      <img src="assets/voucher.jpg" alt="Voucher Numerologia e Luz — Vale uma Numerologia" loading="lazy">
+    </div>
+    <div class="voucher-text">
+      <span class="eyebrow" data-i18n="vch_eyebrow">Presente</span>
+      <h2 class="sec-title" data-i18n="vch_title">Dê uma jornada de autoconhecimento</h2>
+      <p class="sec-intro" data-i18n="vch_intro">O presente para quem você ama se conhecer. Um voucher para uma análise numerológica completa — quem recebe escolhe a carta e descobre sua essência, seus talentos e seu caminho.</p>
+      <ul class="voucher-list">
+        <li data-i18n="vch_i1">Válido para qualquer uma das cartas</li>
+        <li data-i18n="vch_i2">Enviado em arte digital, pronto para presentear</li>
+        <li data-i18n="vch_i3">Ideal para aniversários, Dia das Mães e datas especiais</li>
+      </ul>
+      <div class="cta-pair voucher-cta">
+        <a class="btn btn-gold wa-voucher" href="#" target="_blank" rel="noopener" data-i18n="vch_cta">Comprar aqui</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- COMO FUNCIONA -->
 <section id="como">
   <div class="wrap">
@@ -584,7 +620,7 @@ window.addEventListener('load', () => window.scrollTo(0, 0));
 /* ───────────────── i18n ───────────────── */
 const I18N = {
 pt:{
- nav_about:"A Numerologia", nav_bio:"Sobre Anahí", nav_calc:"Cálculo grátis", nav_plans:"Cartas", nav_how:"Como funciona",
+ nav_about:"A Numerologia", nav_bio:"Sobre Anahí", nav_calc:"Cálculo grátis", nav_plans:"Cartas", nav_voucher:"Presente", nav_how:"Como funciona",
  hero_luz:"e Luz",
  hero_sub:"Seu nome e sua data de nascimento guardam um mapa. A <strong>Numerologia Pitagórica</strong> traduz esses números em autoconhecimento, clareza e propósito.",
  hero_cta1:"Calcule grátis seus números", hero_cta2:"Conheça as cartas",
@@ -629,6 +665,14 @@ pt:{
  pl3_i4:"Guia de desenvolvimento pessoal", pl3_i5:"Sessão online ao vivo (áudio ou vídeo)",
  pl3_i6:"Respostas às suas principais dúvidas", pl3_i7:"Clareza para decisões e próximos passos", pl3_i8:"Relatório exclusivo em PDF",
  how_eyebrow:"Como funciona", how_title:"Da mensagem à sua carta",
+ vch_eyebrow:"Presente", vch_title:"Dê uma jornada de autoconhecimento",
+ vch_intro:"O presente para quem você ama se conhecer. Um voucher para uma análise numerológica — quem recebe escolhe a carta e descobre sua essência, seus talentos e seu caminho.",
+ vch_i1:"Válido para qualquer uma das cartas",
+ vch_i2:"Enviado em arte digital, pronto para presentear",
+ vch_i3:"Ideal para aniversários, Dia das Mães e datas especiais",
+ vch_cta:"Comprar aqui", vch_cta_email:"Presentear por e-mail",
+ vch_subj:"Quero presentear um Voucher — Numerologia e Luz",
+ wa_voucher:"Olá! Quero presentear alguém com um Voucher de Numerologia. Pode me ajudar a escolher a carta? ✨",
  s1_title:"Você entra em contato", s1_text:"Pelo WhatsApp, você escolhe sua carta e envia seu nome completo de registro e sua data de nascimento.",
  s2_title:"A análise é feita à mão", s2_text:"Cada número do seu mapa é calculado e interpretado pessoalmente, com o cuidado que um mapa único merece.",
  s3_title:"Você recebe e conversa", s3_text:"Sua carta chega em PDF para consultar sempre que quiser. No plano Premium, uma sessão ao vivo aprofunda cada detalhe.",
@@ -646,7 +690,7 @@ pt:{
  prices:{essencial:"R$ 147",completa:"R$ 297",premium:"R$ 497"}
 },
 es:{
- nav_about:"La Numerología", nav_bio:"Sobre Anahí", nav_calc:"Cálculo gratis", nav_plans:"Cartas", nav_how:"Cómo funciona",
+ nav_about:"La Numerología", nav_bio:"Sobre Anahí", nav_calc:"Cálculo gratis", nav_plans:"Cartas", nav_voucher:"Regalo", nav_how:"Cómo funciona",
  hero_luz:"y Luz",
  hero_sub:"Tu nombre y tu fecha de nacimiento guardan un mapa. La <strong>Numerología Pitagórica</strong> traduce esos números en autoconocimiento, claridad y propósito.",
  hero_cta1:"Calculá gratis tus números", hero_cta2:"Conocé las cartas",
@@ -691,6 +735,14 @@ es:{
  pl3_i4:"Guía de desarrollo personal", pl3_i5:"Sesión online en vivo (audio o video)",
  pl3_i6:"Respuestas a tus principales dudas", pl3_i7:"Claridad para decisiones y próximos pasos", pl3_i8:"Informe exclusivo en PDF",
  how_eyebrow:"Cómo funciona", how_title:"Del mensaje a tu carta",
+ vch_eyebrow:"Regalo", vch_title:"Regalá un viaje de autoconocimiento",
+ vch_intro:"El regalo para quien querés que se conozca. Un voucher para un análisis numerológico — quien lo recibe elige la carta y descubre su esencia, sus talentos y su camino.",
+ vch_i1:"Válido para cualquiera de las cartas",
+ vch_i2:"Enviado en arte digital, listo para regalar",
+ vch_i3:"Ideal para cumpleaños, Día de la Madre y fechas especiales",
+ vch_cta:"Comprar aquí", vch_cta_email:"Regalar por mail",
+ vch_subj:"Quiero regalar un Voucher — Numerología y Luz",
+ wa_voucher:"¡Hola! Quiero regalarle a alguien un Voucher de Numerología. ¿Me ayudás a elegir la carta? ✨",
  s1_title:"Te ponés en contacto", s1_text:"Por WhatsApp, elegís tu carta y enviás tu nombre completo de registro y tu fecha de nacimiento.",
  s2_title:"El análisis se hace a mano", s2_text:"Cada número de tu mapa se calcula e interpreta personalmente, con el cuidado que un mapa único merece.",
  s3_title:"Recibís y conversamos", s3_text:"Tu carta llega en PDF para consultarla cuando quieras. En el plan Premium, una sesión en vivo profundiza cada detalle.",
@@ -864,6 +916,10 @@ function updateWaLinks(){
     if(re){ re.href = emailUrl(t.email_subj_result, t.wa_general); }
   }
   if(re){ re.textContent = t.email_result_label; }
+
+  // Voucher / presente
+  const wv = document.querySelector('.wa-voucher');
+  if(wv){ wv.href = waUrl(t.wa_voucher); }
 }
 
 /* ───────────────── numerologia pitagórica ───────────────── */
